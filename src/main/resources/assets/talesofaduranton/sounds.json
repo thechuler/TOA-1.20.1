@@ -1,0 +1,41 @@
+{
+
+
+  "frogmanambient": {
+    "subtitles": "sounds.talesofaduranton.frogmanambient",
+    "sounds":[
+      "talesofaduranton:frogmanambient1",
+      "talesofaduranton:frogmanambient2",
+      "talesofaduranton:frogmanambient3"
+    ]
+  },
+
+
+  "frogmanhurt": {
+    "subtitles": "sounds.talesofaduranton.frogmanhurt",
+    "sounds":[
+      "talesofaduranton:frogmanhurt1",
+      "talesofaduranton:frogmanhurt2"
+    ]
+  },
+
+
+  "frogmandeath": {
+    "subtitles": "sounds.talesofaduranton.frogmandeath",
+    "sounds":[
+      "talesofaduranton:frogmandeath1",
+      "talesofaduranton:frogmandeath2"
+    ]
+  },
+
+
+  "frogmaneasteregg": {
+    "subtitles": "sounds.talesofaduranton.frogmaneasteregg",
+    "sounds":[
+      "talesofaduranton:frogmaneasteregg"
+    ]
+  }
+
+
+
+}
