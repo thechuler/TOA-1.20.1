@@ -3,6 +3,8 @@ package net.rbkstudios.talesofaduranton.Items;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tiers;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -10,6 +12,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.rbkstudios.talesofaduranton.Efectos.InicializarEfectos;
 import net.rbkstudios.talesofaduranton.Entidades.InicializarEntidades;
+import net.rbkstudios.talesofaduranton.Items.Custom.Breaker;
 import net.rbkstudios.talesofaduranton.Items.Custom.FrogManStaff;
 import net.rbkstudios.talesofaduranton.Items.Custom.geodaItem;
 import net.rbkstudios.talesofaduranton.TalesOfAduranton;
@@ -35,6 +38,20 @@ public class InicializarItems {
     public static final RegistryObject<Item> POISON_BALL = ITEMS.register("poison_ball",
             () -> new Item(new Item.Properties().stacksTo(64).food(new FoodProperties.Builder().saturationMod(0).fast().alwaysEat().nutrition(0).effect(new MobEffectInstance(InicializarEfectos.POISONOUS_EFFECT.get(),100),1).build())));
 
+    public static final RegistryObject<Item> STONE_BREAKER = ITEMS.register("stone_breaker",
+            () -> new Breaker(Tiers.STONE,6,-1.5f,new Item.Properties()));
+
+    public static final RegistryObject<Item> IRON_BREAKER = ITEMS.register("iron_breaker",
+            () -> new Breaker(Tiers.STONE,7,-2.0f,new Item.Properties()));
+
+    public static final RegistryObject<Item> GOLD_BREAKER = ITEMS.register("gold_breaker",
+            () -> new Breaker(Tiers.STONE,6,-2.5f,new Item.Properties()));
+
+    public static final RegistryObject<Item> DIAMOND_BREAKER = ITEMS.register("diamond_breaker",
+            () -> new Breaker(Tiers.STONE,8,-3.0f,new Item.Properties()));
+
+    public static final RegistryObject<Item> NETHERITE_BREAKER = ITEMS.register("netherite_breaker",
+            () -> new Breaker(Tiers.STONE,10,-3.5f,new Item.Properties()));
 
 
 

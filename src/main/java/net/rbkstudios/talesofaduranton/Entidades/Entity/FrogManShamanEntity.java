@@ -1,11 +1,13 @@
 package net.rbkstudios.talesofaduranton.Entidades.Entity;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -27,6 +29,7 @@ import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.raid.Raider;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.rbkstudios.talesofaduranton.Entidades.IA.ShamanSummonGoal;
 import net.rbkstudios.talesofaduranton.Sonidos.InicializarSonidos;
 import org.jetbrains.annotations.Nullable;
@@ -183,7 +186,9 @@ public class FrogManShamanEntity extends Animal implements Enemy {
 
 
 
-
+    public static boolean PuedeSpawnear(EntityType<FrogManShamanEntity> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos position, RandomSource random) {
+        return true ;
+    }
 
 
 

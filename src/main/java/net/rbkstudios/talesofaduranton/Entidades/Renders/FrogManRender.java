@@ -33,6 +33,9 @@ public class FrogManRender<type extends FrogManEntity> extends MobRenderer<type,
 
 
 
+   
+
+
 
     @Override
     public void render(FrogManEntity pEntity, float pEntityYaw, float pPartialTicks, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight) {

@@ -17,6 +17,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManEntity;
 import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManShamanEntity;
 import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManSkeletonEntity;
+import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManTraderEntity;
 import net.rbkstudios.talesofaduranton.TalesOfAduranton;
 
 
@@ -38,6 +39,10 @@ public class InicializarEntidades {
             () -> EntityType.Builder.of(FrogManShamanEntity::new, MobCategory.CREATURE).sized(1f,1.3f)
                     .build(new ResourceLocation(TalesOfAduranton.MODID,"frogman_shaman_entity").toString()));
 
+    public static final RegistryObject<EntityType<FrogManTraderEntity>> FROGMAN_TRADER_ENTITY = ENTIDADES.register("frogman_trader_entity",
+            () -> EntityType.Builder.of(FrogManTraderEntity::new, MobCategory.CREATURE).sized(1f,1.3f)
+                    .build(new ResourceLocation(TalesOfAduranton.MODID,"frogman_trader_entity").toString()));
+
 
 
 
@@ -55,11 +60,15 @@ public class InicializarEntidades {
         event.put(FROGMAN_ENTITY.get(), FrogManEntity.createAttributes().build());
         event.put(FROGMAN_SKELETON_ENTITY.get(), FrogManEntity.createAttributes().build());
         event.put(FROGMAN_SHAMAN_ENTITY.get(), FrogManSkeletonEntity.createAttributes().build());
+        event.put(FROGMAN_TRADER_ENTITY.get(), FrogManTraderEntity.createAttributes().build());
+
     }
 
     @SubscribeEvent
     public  static void  RegistrarLugardeSpawn(SpawnPlacementRegisterEvent event){
         event.register(InicializarEntidades.FROGMAN_ENTITY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE,FrogManEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.OR);
+        event.register(InicializarEntidades.FROGMAN_SHAMAN_ENTITY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE,FrogManShamanEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.OR);
+        event.register(InicializarEntidades.FROGMAN_TRADER_ENTITY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE,FrogManTraderEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.OR);
 
     }
 

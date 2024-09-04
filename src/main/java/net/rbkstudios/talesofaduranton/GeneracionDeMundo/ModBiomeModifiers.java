@@ -16,13 +16,14 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.rbkstudios.talesofaduranton.Entidades.InicializarEntidades;
 import net.rbkstudios.talesofaduranton.TalesOfAduranton;
 
-import java.util.Collections;
+import java.util.Arrays;
+
 
 public class ModBiomeModifiers {
 
     public static final ResourceKey<BiomeModifier> AGREGAR_PIEDRA_CARGADA = registerKey("agregar_piedra_cargada");
     public static final ResourceKey<BiomeModifier> SPAWNEAR_FROGMAN = registerKey("spawn_frogman");
-    public static final ResourceKey<BiomeModifier> SPAWNEAR_NITROMOSCA = registerKey("spawn_nitromosca");
+
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -48,15 +49,21 @@ public class ModBiomeModifiers {
         context.register(SPAWNEAR_FROGMAN, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
                 BIOMASFROGMAN,
 
-                Collections.singletonList(new MobSpawnSettings.SpawnerData(
-                        InicializarEntidades.FROGMAN_ENTITY.get(),
-                        100,  // Peso de generación
-                        4,
-                        6
-                ))
+                Arrays.asList(
+                        new MobSpawnSettings.SpawnerData(
+                                InicializarEntidades.FROGMAN_ENTITY.get(),
+                                100,
+                                4,
+                                6
+                        ),
+                        new MobSpawnSettings.SpawnerData(
+                                InicializarEntidades.FROGMAN_SHAMAN_ENTITY.get(),
+                                30,
+                                1,
+                                1
+                        )
+                )
         ));
-
-
 
 
 
