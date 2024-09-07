@@ -72,5 +72,6 @@ public class FrogManTraderModel<T extends FrogManTraderEntity> extends Hierarchi
 		this.root().getAllParts().forEach(ModelPart::resetPose);
 		this.animateWalk(FrogManTraderAnimaciones.CAMINAR, v, v1, 4f, 2.5f);
 		this.animate(((FrogManTraderEntity) t).idleAnimationState, FrogManTraderAnimaciones.IDLE, v2, 1f);
+		this.animate(((FrogManTraderEntity) t).gruñirAnimationState, FrogManTraderAnimaciones.GRUÑIDO, v2, 1f);
 	}
 }

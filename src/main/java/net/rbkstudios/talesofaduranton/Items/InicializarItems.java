@@ -1,6 +1,7 @@
 package net.rbkstudios.talesofaduranton.Items;
 
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
@@ -29,11 +30,25 @@ public class InicializarItems {
     public static final RegistryObject<Item> FROG_MAN_SHAMAN_SPAWN_EGG = ITEMS.register("frogman_spawn_shaman_egg",
             () -> new ForgeSpawnEggItem(InicializarEntidades.FROGMAN_SHAMAN_ENTITY, 0x428430, 0xb847ca, new Item.Properties()));
 
+    public static final RegistryObject<Item> FROG_MAN_TRADER_SPAWN_EGG = ITEMS.register("frogman_spawn_trader_egg",
+            () -> new ForgeSpawnEggItem(InicializarEntidades.FROGMAN_TRADER_ENTITY, 0x428430, 0x222621, new Item.Properties()));
+
+    public static final RegistryObject<Item> FROG_MAN_GOLLIAT_SPAWN_EGG = ITEMS.register("frogman_spawn_golliat_egg",
+            () -> new ForgeSpawnEggItem(InicializarEntidades.FROGMAN_GOLLIAT, 0x26423b, 0x7ca966, new Item.Properties()));
+
+
     public static final RegistryObject<Item> STAFF = ITEMS.register("staff",
             () -> new FrogManStaff(new Item.Properties().stacksTo(1).durability(250)));
 
     public static final RegistryObject<Item> GEODE = ITEMS.register("geode",
             () -> new geodaItem(new Item.Properties().stacksTo(64)));
+
+    public static final RegistryObject<Item> RAW_FROG_MEAT = ITEMS.register("raw_frog_meat",
+            () -> new Item(new Item.Properties().stacksTo(64).food(new FoodProperties.Builder().nutrition(5).saturationMod(3).effect(new MobEffectInstance(MobEffects.POISON,100),1).build())));
+
+    public static final RegistryObject<Item> COOKED_FROG_MEAT = ITEMS.register("cooked_frog_meat",
+            () -> new Item(new Item.Properties().stacksTo(64).food(new FoodProperties.Builder().nutrition(10).saturationMod(8).build())));
+
 
     public static final RegistryObject<Item> POISON_BALL = ITEMS.register("poison_ball",
             () -> new Item(new Item.Properties().stacksTo(64).food(new FoodProperties.Builder().saturationMod(0).fast().alwaysEat().nutrition(0).effect(new MobEffectInstance(InicializarEfectos.POISONOUS_EFFECT.get(),100),1).build())));
@@ -52,6 +67,10 @@ public class InicializarItems {
 
     public static final RegistryObject<Item> NETHERITE_BREAKER = ITEMS.register("netherite_breaker",
             () -> new Breaker(Tiers.STONE,10,-3.5f,new Item.Properties()));
+
+
+    public static final RegistryObject<Item> COIN = ITEMS.register("coin",
+            () -> new Item(new Item.Properties().stacksTo(64)));
 
 
 

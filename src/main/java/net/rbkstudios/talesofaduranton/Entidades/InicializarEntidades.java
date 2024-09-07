@@ -14,10 +14,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManEntity;
-import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManShamanEntity;
-import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManSkeletonEntity;
-import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManTraderEntity;
+import net.rbkstudios.talesofaduranton.Entidades.Entity.*;
 import net.rbkstudios.talesofaduranton.TalesOfAduranton;
 
 
@@ -43,6 +40,9 @@ public class InicializarEntidades {
             () -> EntityType.Builder.of(FrogManTraderEntity::new, MobCategory.CREATURE).sized(1f,1.3f)
                     .build(new ResourceLocation(TalesOfAduranton.MODID,"frogman_trader_entity").toString()));
 
+    public static final RegistryObject<EntityType<FrogManGolliatEntity>> FROGMAN_GOLLIAT = ENTIDADES.register("frogman_golliat_entity",
+            () -> EntityType.Builder.of(FrogManGolliatEntity::new, MobCategory.CREATURE).sized(2.5f,2.5f)
+                    .build(new ResourceLocation(TalesOfAduranton.MODID,"frogman_golliat_entity").toString()));
 
 
 
@@ -61,6 +61,7 @@ public class InicializarEntidades {
         event.put(FROGMAN_SKELETON_ENTITY.get(), FrogManEntity.createAttributes().build());
         event.put(FROGMAN_SHAMAN_ENTITY.get(), FrogManSkeletonEntity.createAttributes().build());
         event.put(FROGMAN_TRADER_ENTITY.get(), FrogManTraderEntity.createAttributes().build());
+        event.put(FROGMAN_GOLLIAT.get(), FrogManGolliatEntity.createAttributes().build());
 
     }
 

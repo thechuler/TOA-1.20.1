@@ -17,14 +17,8 @@ import net.rbkstudios.talesofaduranton.Bloques.InicializarBloques;
 import net.rbkstudios.talesofaduranton.Efectos.InicializarEfectos;
 import net.rbkstudios.talesofaduranton.Encantamientos.InicializarEncantamientos;
 import net.rbkstudios.talesofaduranton.Entidades.InicializarEntidades;
-import net.rbkstudios.talesofaduranton.Entidades.Modelos.FrogManModel;
-import net.rbkstudios.talesofaduranton.Entidades.Modelos.FrogManShamanModel;
-import net.rbkstudios.talesofaduranton.Entidades.Modelos.FrogManSkeletonModel;
-import net.rbkstudios.talesofaduranton.Entidades.Modelos.FrogManTraderModel;
-import net.rbkstudios.talesofaduranton.Entidades.Renders.FrogManRender;
-import net.rbkstudios.talesofaduranton.Entidades.Renders.FrogManShamanRender;
-import net.rbkstudios.talesofaduranton.Entidades.Renders.FrogManSkeletonRender;
-import net.rbkstudios.talesofaduranton.Entidades.Renders.FrogManTraderRender;
+import net.rbkstudios.talesofaduranton.Entidades.Modelos.*;
+import net.rbkstudios.talesofaduranton.Entidades.Renders.*;
 import net.rbkstudios.talesofaduranton.Items.InicializarCreativeTab;
 import net.rbkstudios.talesofaduranton.Items.InicializarItems;
 import net.rbkstudios.talesofaduranton.Sonidos.InicializarSonidos;
@@ -111,7 +105,7 @@ public class TalesOfAduranton
             event.registerLayerDefinition(FrogManSkeletonModel.LAYER_LOCATION,FrogManSkeletonModel::createBodyLayer);
             event.registerLayerDefinition(FrogManShamanModel.LAYER_LOCATION,FrogManShamanModel::createBodyLayer);
             event.registerLayerDefinition(FrogManTraderModel.LAYER_LOCATION,FrogManTraderModel::createBodyLayer);
-
+            event.registerLayerDefinition(FrogManGolliatModel.LAYER_LOCATION, FrogManGolliatModel::createBodyLayer);
         }
 
         @SubscribeEvent
@@ -120,6 +114,7 @@ public class TalesOfAduranton
             event.registerEntityRenderer(InicializarEntidades.FROGMAN_SKELETON_ENTITY.get(), FrogManSkeletonRender::new);
             event.registerEntityRenderer(InicializarEntidades.FROGMAN_SHAMAN_ENTITY.get(), FrogManShamanRender::new);
             event.registerEntityRenderer(InicializarEntidades.FROGMAN_TRADER_ENTITY.get(), FrogManTraderRender::new);
+            event.registerEntityRenderer(InicializarEntidades.FROGMAN_GOLLIAT.get(), FrogManGolliatRender::new);
 
 
 

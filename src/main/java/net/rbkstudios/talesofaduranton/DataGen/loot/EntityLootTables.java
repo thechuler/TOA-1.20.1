@@ -28,6 +28,9 @@ public class EntityLootTables extends EntityLootSubProvider {
 
     @Override
     public void generate() {
+
+        add(InicializarEntidades.FROGMAN_TRADER_ENTITY.get(), LootTable.lootTable());
+        add(InicializarEntidades.FROGMAN_GOLLIAT.get(), LootTable.lootTable());
        add(InicializarEntidades.FROGMAN_ENTITY.get(), LootTable.lootTable()
                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
                        .add(LootItem.lootTableItem(InicializarItems.POISON_BALL.get()))
