@@ -15,12 +15,8 @@ public class FrogManRender<type extends FrogManEntity> extends MobRenderer<type,
 
 
     FrogManEntity entity;
+    private static final ResourceLocation TEXTURAS = new ResourceLocation(TalesOfAduranton.MODID, "textures/entity/frogmantexture.png");
 
-    private static final ResourceLocation[] TEXTURAS = new ResourceLocation[] {
-           new ResourceLocation(TalesOfAduranton.MODID, "textures/entity/frogmantexture.png"),
-            new ResourceLocation(TalesOfAduranton.MODID, "textures/entity/frogmantexture1.png"),
-            new ResourceLocation(TalesOfAduranton.MODID, "textures/entity/frogmantexture2.png")
-    };
     private static final ResourceLocation EASTEREGG = new ResourceLocation(TalesOfAduranton.MODID, "textures/entity/frogmanboca1.png");
 
 
@@ -53,7 +49,7 @@ public class FrogManRender<type extends FrogManEntity> extends MobRenderer<type,
         if (this.entity.hasCustomName() && this.entity.getCustomName() != null && this.entity.getCustomName().getString().equals("Roman")) {
             return EASTEREGG;
         } else {
-            return TEXTURAS[this.entity.index];
+            return TEXTURAS;
         }
 
 

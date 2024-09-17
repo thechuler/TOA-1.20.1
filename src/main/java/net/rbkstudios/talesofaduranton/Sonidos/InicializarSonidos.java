@@ -38,32 +38,32 @@ public class InicializarSonidos {
 
 
 
-    public static final RegistryObject<SoundEvent>  EMPTY_CANNON=
-            SONIDOS.register("empty_cannon", ()-> SoundEvent.createVariableRangeEvent(new ResourceLocation
-                    (TalesOfAduranton.MODID,"empty_cannon")));
+    public static final RegistryObject<SoundEvent>  FROGMANTRADEUPDATE=
+            SONIDOS.register("frogmantradeupdate", ()-> SoundEvent.createVariableRangeEvent(new ResourceLocation
+                    (TalesOfAduranton.MODID,"frogmantradeupdate")));
 
 
-    public static final RegistryObject<SoundEvent> CANNON_RELOAD=
-            SONIDOS.register("cannon_reload", ()-> SoundEvent.createVariableRangeEvent(new ResourceLocation
-                    (TalesOfAduranton.MODID,"cannon_reload")));
+    public static final RegistryObject<SoundEvent>  FROGMANZOMBIEHURT=
+            SONIDOS.register("frogmanzombiehurt", ()-> SoundEvent.createVariableRangeEvent(new ResourceLocation
+                    (TalesOfAduranton.MODID,"frogmanzombiehurt")));
+
+
+    public static final RegistryObject<SoundEvent>  FROGMANZOMBIEDEAD=
+            SONIDOS.register("frogmanzombiedead", ()-> SoundEvent.createVariableRangeEvent(new ResourceLocation
+                    (TalesOfAduranton.MODID,"frogmanzombiedead")));
+
+
+    public static final RegistryObject<SoundEvent>  FROGMANZOMBIEAMBIENT=
+            SONIDOS.register("frogmanzombieambient", ()-> SoundEvent.createVariableRangeEvent(new ResourceLocation
+                    (TalesOfAduranton.MODID,"frogmanzombieambient")));
 
 
 
-    public static final RegistryObject<SoundEvent>  CANNON_CLICK=
-            SONIDOS.register("cannon_click", ()-> SoundEvent.createVariableRangeEvent(new ResourceLocation
-                    (TalesOfAduranton.MODID,"cannon_click")));
 
 
-    public static final RegistryObject<SoundEvent>  CANNON_SHOOT=
-            SONIDOS.register("cannon_shoot", ()-> SoundEvent.createVariableRangeEvent(new ResourceLocation
-                    (TalesOfAduranton.MODID,"cannon_shoot")));
-
-
-
-    public static final RegistryObject<SoundEvent>  NITRO_FLUID_SPLASH=
-            SONIDOS.register("nitro_fluid_splash", ()-> SoundEvent.createVariableRangeEvent(new ResourceLocation
-                    (TalesOfAduranton.MODID,"nitro_fluid_splash")));
-
+    public static final RegistryObject<SoundEvent>  FROGMANBEASTHURT=
+            SONIDOS.register("frogmanbeasthurt", ()-> SoundEvent.createVariableRangeEvent(new ResourceLocation
+                    (TalesOfAduranton.MODID,"frogmanbeasthurt")));
 
 
 

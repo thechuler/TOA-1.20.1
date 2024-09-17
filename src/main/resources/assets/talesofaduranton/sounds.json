@@ -34,8 +34,61 @@
     "sounds":[
       "talesofaduranton:frogmaneasteregg"
     ]
+  },
+
+  "frogmantradeupdate": {
+    "subtitles": "sounds.talesofaduranton.frogmantradeupdate",
+    "sounds":[
+      "talesofaduranton:frogmantradeupdate"
+    ]
+  },
+
+  "frogmanzombiehurt": {
+    "subtitles": "sounds.talesofaduranton.frogmanzombiehurt",
+    "sounds":[
+      "talesofaduranton:frogman_zombie_hurt1",
+
+      "talesofaduranton:frogman_zombie_hurt2",
+
+      "talesofaduranton:frogman_zombie_hurt3"
+    ]
+  },
+  "frogmanzombiedead": {
+    "subtitles": "sounds.talesofaduranton.frogmanzombiedead",
+    "sounds":[
+      "talesofaduranton:frogman_zombie_dead1",
+
+      "talesofaduranton:frogman_zombie_dead2"
+    ]
+  },
+
+  "frogmanzombieambient": {
+    "subtitles": "sounds.talesofaduranton.frogmanzombieambient",
+    "sounds":[
+      "talesofaduranton:frogman_zombie_ambient1",
+
+      "talesofaduranton:frogman_zombie_ambient2",
+      "talesofaduranton:frogman_zombie_ambient3",
+      "talesofaduranton:frogman_zombie_ambient4",
+      "talesofaduranton:frogman_zombie_ambient5"
+    ]
+  },
+
+  "frogmanbeastambient": {
+    "subtitles": "sounds.talesofaduranton.frogmanbeastambient",
+    "sounds":[
+      "talesofaduranton:frogmanbeast_ambient1",
+
+      "talesofaduranton:frogmanbeast_ambient2"
+    ]
+  },
+
+
+  "frogmanbeasthurt": {
+    "subtitles": "sounds.talesofaduranton.frogmanbeasthurt",
+    "sounds":[
+      "talesofaduranton:frogmanbeast_hurt1"
+
+    ]
   }
-
-
-
 }

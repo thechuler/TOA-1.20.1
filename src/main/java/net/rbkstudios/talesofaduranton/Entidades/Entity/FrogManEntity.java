@@ -9,6 +9,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -19,6 +20,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.animal.AbstractGolem;
 import net.minecraft.world.entity.animal.Animal;
@@ -36,8 +38,6 @@ import java.util.List;
 
 
 public class FrogManEntity extends Animal implements Enemy {
-
-   public int index = (int) (Math.random() * 3);
 
 
    public static EntityDataAccessor<Boolean> RUGIR = SynchedEntityData.defineId(FrogManEntity.class, EntityDataSerializers.BOOLEAN);
@@ -162,7 +162,6 @@ public class FrogManEntity extends Animal implements Enemy {
     }
 
 
-
     //-------------------------------TICK-------------------------------------//
   @Override
   public void tick() {
@@ -192,7 +191,8 @@ public static AttributeSupplier.Builder createAttributes() {
     return Mob.createMobAttributes()
             .add(Attributes.MAX_HEALTH, 10.0)
             .add(Attributes.MOVEMENT_SPEED, 0.4)
-            .add(Attributes.ATTACK_DAMAGE, 8.5);
+            .add(Attributes.ATTACK_DAMAGE, 8.5)
+           .add(Attributes.FOLLOW_RANGE,20);
 }
 
 
@@ -209,6 +209,7 @@ public static AttributeSupplier.Builder createAttributes() {
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(1,new FloatGoal(this));
+        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, new Class[0])).setAlertOthers(new Class[0]));
         this.goalSelector.addGoal(2,new MeleeAttackGoal(this,1,true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Player.class, true));
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, AbstractVillager.class, false));

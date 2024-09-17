@@ -1,10 +1,14 @@
-// 1.20.1	2024-09-07T17:07:23.9159302	Item Models: talesofaduranton
+// 1.20.1	2024-09-16T01:59:06.9208025	Item Models: talesofaduranton
 f2e78c5787c831dfab1b68ae5ba8fb79dc1e152c assets/talesofaduranton/models/item/coin.json
 de386c74957d56bcede7fe68b58393e7dd9d2504 assets/talesofaduranton/models/item/cooked_frog_meat.json
 43c6881a237cc726a5ed42f39e5e164f5e10505d assets/talesofaduranton/models/item/diamond_breaker.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/talesofaduranton/models/item/frogman_spawn_beast_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/talesofaduranton/models/item/frogman_spawn_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/talesofaduranton/models/item/frogman_spawn_shaman_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/talesofaduranton/models/item/frogman_spawn_skeleton_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/talesofaduranton/models/item/frogman_spawn_trader_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/talesofaduranton/models/item/frogman_spawn_tropical_egg.json
+63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/talesofaduranton/models/item/frogman_spawn_zombie_egg.json
 20a4258f30e0bdec3c51519a72b3c582b3a27926 assets/talesofaduranton/models/item/geode.json
 3063920da4e3bb3d1351134fa8352b3ec97cc8dd assets/talesofaduranton/models/item/gold_breaker.json
 351366777e94cf693ac05bcc12edfa4d8a4c7429 assets/talesofaduranton/models/item/iron_breaker.json

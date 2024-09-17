@@ -40,9 +40,22 @@ public class InicializarEntidades {
             () -> EntityType.Builder.of(FrogManTraderEntity::new, MobCategory.CREATURE).sized(1f,1.3f)
                     .build(new ResourceLocation(TalesOfAduranton.MODID,"frogman_trader_entity").toString()));
 
-    public static final RegistryObject<EntityType<FrogManGolliatEntity>> FROGMAN_GOLLIAT = ENTIDADES.register("frogman_golliat_entity",
-            () -> EntityType.Builder.of(FrogManGolliatEntity::new, MobCategory.CREATURE).sized(2.5f,2.5f)
-                    .build(new ResourceLocation(TalesOfAduranton.MODID,"frogman_golliat_entity").toString()));
+
+
+    public static final RegistryObject<EntityType<FrogManTropicalEntity>> FROGMAN_TROPICAL = ENTIDADES.register("frogman_tropical",
+            () -> EntityType.Builder.of(FrogManTropicalEntity::new, MobCategory.CREATURE).sized(1f,1.3f)
+                    .build(new ResourceLocation(TalesOfAduranton.MODID,"frogman_tropical").toString()));
+
+
+    public static final RegistryObject<EntityType<FrogManZombieEntity>> FROGMAN_ZOMBIE = ENTIDADES.register("frogman_zombie",
+            () -> EntityType.Builder.of(FrogManZombieEntity::new, MobCategory.CREATURE).sized(1f,1.3f)
+                    .build(new ResourceLocation(TalesOfAduranton.MODID,"frogman_zombie").toString()));
+
+
+    public static final RegistryObject<EntityType<FrogManBeastEntity>> FROGMAN_BEAST = ENTIDADES.register("frogman_beast",
+            () -> EntityType.Builder.of(FrogManBeastEntity::new, MobCategory.CREATURE).sized(1f,1.3f)
+                    .build(new ResourceLocation(TalesOfAduranton.MODID,"frogman_beast").toString()));
+
 
 
 
@@ -61,7 +74,10 @@ public class InicializarEntidades {
         event.put(FROGMAN_SKELETON_ENTITY.get(), FrogManEntity.createAttributes().build());
         event.put(FROGMAN_SHAMAN_ENTITY.get(), FrogManSkeletonEntity.createAttributes().build());
         event.put(FROGMAN_TRADER_ENTITY.get(), FrogManTraderEntity.createAttributes().build());
-        event.put(FROGMAN_GOLLIAT.get(), FrogManGolliatEntity.createAttributes().build());
+        event.put(FROGMAN_TROPICAL.get(), FrogManTropicalEntity.createAttributes().build());
+        event.put(FROGMAN_ZOMBIE.get(), FrogManZombieEntity.createAttributes().build());
+        event.put(FROGMAN_BEAST.get(), FrogManBeastEntity.createAttributes().build());
+
 
     }
 

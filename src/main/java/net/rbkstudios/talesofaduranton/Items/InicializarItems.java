@@ -4,7 +4,6 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tiers;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -15,6 +14,7 @@ import net.rbkstudios.talesofaduranton.Efectos.InicializarEfectos;
 import net.rbkstudios.talesofaduranton.Entidades.InicializarEntidades;
 import net.rbkstudios.talesofaduranton.Items.Custom.Breaker;
 import net.rbkstudios.talesofaduranton.Items.Custom.FrogManStaff;
+
 import net.rbkstudios.talesofaduranton.Items.Custom.geodaItem;
 import net.rbkstudios.talesofaduranton.TalesOfAduranton;
 
@@ -33,8 +33,15 @@ public class InicializarItems {
     public static final RegistryObject<Item> FROG_MAN_TRADER_SPAWN_EGG = ITEMS.register("frogman_spawn_trader_egg",
             () -> new ForgeSpawnEggItem(InicializarEntidades.FROGMAN_TRADER_ENTITY, 0x428430, 0x222621, new Item.Properties()));
 
-    public static final RegistryObject<Item> FROG_MAN_GOLLIAT_SPAWN_EGG = ITEMS.register("frogman_spawn_golliat_egg",
-            () -> new ForgeSpawnEggItem(InicializarEntidades.FROGMAN_GOLLIAT, 0x26423b, 0x7ca966, new Item.Properties()));
+    public static final RegistryObject<Item> FROG_MAN_TROPICAL_SPAWN_EGG = ITEMS.register("frogman_spawn_tropical_egg",
+            () -> new ForgeSpawnEggItem(InicializarEntidades.FROGMAN_TROPICAL, 0x68bd11, 0x68bd11, new Item.Properties()));
+
+    public static final RegistryObject<Item> FROG_MAN_ZOMBIE_SPAWN_EGG = ITEMS.register("frogman_spawn_zombie_egg",
+            () -> new ForgeSpawnEggItem(InicializarEntidades.FROGMAN_ZOMBIE, 0x46632f, 0x93ae60, new Item.Properties()));
+
+    public static final RegistryObject<Item> FROG_MAN_BEAST_SPAWN_EGG = ITEMS.register("frogman_spawn_beast_egg",
+            () -> new ForgeSpawnEggItem(InicializarEntidades.FROGMAN_BEAST, 0x5c3f2a, 0x232c35, new Item.Properties()));
+
 
 
     public static final RegistryObject<Item> STAFF = ITEMS.register("staff",
@@ -54,25 +61,23 @@ public class InicializarItems {
             () -> new Item(new Item.Properties().stacksTo(64).food(new FoodProperties.Builder().saturationMod(0).fast().alwaysEat().nutrition(0).effect(new MobEffectInstance(InicializarEfectos.POISONOUS_EFFECT.get(),100),1).build())));
 
     public static final RegistryObject<Item> STONE_BREAKER = ITEMS.register("stone_breaker",
-            () -> new Breaker(Tiers.STONE,6,-1.5f,new Item.Properties()));
+            () -> new Breaker(Tiers.STONE,6,-3.0f,new Item.Properties()));
 
     public static final RegistryObject<Item> IRON_BREAKER = ITEMS.register("iron_breaker",
-            () -> new Breaker(Tiers.STONE,7,-2.0f,new Item.Properties()));
+            () -> new Breaker(Tiers.STONE,7,-3.0f,new Item.Properties()));
 
     public static final RegistryObject<Item> GOLD_BREAKER = ITEMS.register("gold_breaker",
-            () -> new Breaker(Tiers.STONE,6,-2.5f,new Item.Properties()));
+            () -> new Breaker(Tiers.STONE,6,-3.0f,new Item.Properties()));
 
     public static final RegistryObject<Item> DIAMOND_BREAKER = ITEMS.register("diamond_breaker",
             () -> new Breaker(Tiers.STONE,8,-3.0f,new Item.Properties()));
 
     public static final RegistryObject<Item> NETHERITE_BREAKER = ITEMS.register("netherite_breaker",
-            () -> new Breaker(Tiers.STONE,10,-3.5f,new Item.Properties()));
+            () -> new Breaker(Tiers.STONE,10,-3.0f,new Item.Properties()));
 
 
     public static final RegistryObject<Item> COIN = ITEMS.register("coin",
             () -> new Item(new Item.Properties().stacksTo(64)));
-
-
 
 
 

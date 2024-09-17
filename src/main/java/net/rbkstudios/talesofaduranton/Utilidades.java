@@ -3,6 +3,7 @@ package net.rbkstudios.talesofaduranton;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -35,13 +36,11 @@ public class Utilidades {
     }
 
 
-
-    public static int GenerarNumeroAleatorio(int min,int max){
-        Random random = new Random();
-        int randomNumber = random.nextInt((max - min) + 1) + min;
-    return randomNumber;
+    public static int GenerarNumeroAleatorio(int min, int max) {
+        RandomSource randomSource = RandomSource.create();
+        int randomNumber = randomSource.nextInt((max - min) + 1) + min;
+        return randomNumber ;
     }
-
 
     public static Entity getEntityPlayerIsLookingAt(Player player, double maxDistance) {
         Level world = player.level();

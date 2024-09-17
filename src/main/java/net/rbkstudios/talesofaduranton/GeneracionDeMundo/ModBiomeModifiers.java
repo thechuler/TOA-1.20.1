@@ -17,12 +17,14 @@ import net.rbkstudios.talesofaduranton.Entidades.InicializarEntidades;
 import net.rbkstudios.talesofaduranton.TalesOfAduranton;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 
 public class ModBiomeModifiers {
 
     public static final ResourceKey<BiomeModifier> AGREGAR_PIEDRA_CARGADA = registerKey("agregar_piedra_cargada");
     public static final ResourceKey<BiomeModifier> SPAWNEAR_FROGMAN = registerKey("spawn_frogman");
+    public static final ResourceKey<BiomeModifier> SPAWNEAR_TRADERFROGMAN = registerKey("spawn_frogmantrader");
 
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
@@ -35,6 +37,24 @@ public class ModBiomeModifiers {
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
 
+        HolderSet<Biome> BIOMASFROGMANTRADER = HolderSet.direct(
+                biomes.getOrThrow(Biomes.SWAMP),
+                biomes.getOrThrow(Biomes.MANGROVE_SWAMP)  // Agrega otro bioma, por ejemplo, el bioma FOREST
+        );
+
+
+        context.register(SPAWNEAR_TRADERFROGMAN, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
+                BIOMASFROGMANTRADER,
+
+                Collections.singletonList(new MobSpawnSettings.SpawnerData(
+                        InicializarEntidades.FROGMAN_TRADER_ENTITY.get(),
+                        01,  // Peso de generación
+                        1,
+                        1
+                ))
+        ));
+
+
 
 
 
@@ -42,7 +62,7 @@ public class ModBiomeModifiers {
 
         HolderSet<Biome> BIOMASFROGMAN = HolderSet.direct(
                 biomes.getOrThrow(Biomes.SWAMP),
-                biomes.getOrThrow(Biomes.MANGROVE_SWAMP)  // Agrega otro bioma, por ejemplo, el bioma FOREST
+                biomes.getOrThrow(Biomes.MANGROVE_SWAMP)
         );
 
 

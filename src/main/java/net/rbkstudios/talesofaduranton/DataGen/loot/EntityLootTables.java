@@ -26,18 +26,50 @@ public class EntityLootTables extends EntityLootSubProvider {
     }
 
 
+
     @Override
     public void generate() {
 
         add(InicializarEntidades.FROGMAN_TRADER_ENTITY.get(), LootTable.lootTable());
-        add(InicializarEntidades.FROGMAN_GOLLIAT.get(), LootTable.lootTable());
-       add(InicializarEntidades.FROGMAN_ENTITY.get(), LootTable.lootTable()
+        add(InicializarEntidades.FROGMAN_BEAST.get(), LootTable.lootTable());
+
+
+
+
+
+
+        add(InicializarEntidades.FROGMAN_TROPICAL.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(InicializarItems.POISON_BALL.get()))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 1)))
+                        .when(LootItemRandomChanceCondition.randomChance(0.5f)) // Probabilidad de 50%
+
+                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(InicializarItems.RAW_FROG_MEAT.get()))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 2)))
+                        .when(LootItemRandomChanceCondition.randomChance(0.7f)) // Probabilidad de 50%
+
+                )
+
+
+        );
+
+
+
+        add(InicializarEntidades.FROGMAN_ENTITY.get(), LootTable.lootTable()
                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
                        .add(LootItem.lootTableItem(InicializarItems.POISON_BALL.get()))
                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 1)))
                        .when(LootItemRandomChanceCondition.randomChance(0.5f)) // Probabilidad de 50%
 
                )
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(InicializarItems.RAW_FROG_MEAT.get()))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 2)))
+                        .when(LootItemRandomChanceCondition.randomChance(0.7f)) // Probabilidad de 50%
+
+                )
 
 
        );
@@ -70,6 +102,13 @@ public class EntityLootTables extends EntityLootSubProvider {
 
         );
 
+        add(InicializarEntidades.FROGMAN_ZOMBIE.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.ROTTEN_FLESH))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(0, 1)))
+                        .when(LootItemRandomChanceCondition.randomChance(0.75f)) // Probabilidad de 50%
+
+                ));
 
     }
 

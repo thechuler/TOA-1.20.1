@@ -16,6 +16,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.rbkstudios.talesofaduranton.Bloques.InicializarBloques;
 import net.rbkstudios.talesofaduranton.Efectos.InicializarEfectos;
 import net.rbkstudios.talesofaduranton.Encantamientos.InicializarEncantamientos;
+import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManTropicalEntity;
+import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManZombieEntity;
 import net.rbkstudios.talesofaduranton.Entidades.InicializarEntidades;
 import net.rbkstudios.talesofaduranton.Entidades.Modelos.*;
 import net.rbkstudios.talesofaduranton.Entidades.Renders.*;
@@ -50,8 +52,6 @@ public class TalesOfAduranton
 
      /*
         InicializarParticulas.register(modEventBus);
-        InicializarSonidos.register(modEventBus);
-        InicializarCreativeTab.registrar(modEventBus);
 */
 
         modEventBus.addListener(this::commonSetup);
@@ -105,7 +105,10 @@ public class TalesOfAduranton
             event.registerLayerDefinition(FrogManSkeletonModel.LAYER_LOCATION,FrogManSkeletonModel::createBodyLayer);
             event.registerLayerDefinition(FrogManShamanModel.LAYER_LOCATION,FrogManShamanModel::createBodyLayer);
             event.registerLayerDefinition(FrogManTraderModel.LAYER_LOCATION,FrogManTraderModel::createBodyLayer);
-            event.registerLayerDefinition(FrogManGolliatModel.LAYER_LOCATION, FrogManGolliatModel::createBodyLayer);
+            event.registerLayerDefinition(FrogManTropicalModel.LAYER_LOCATION, FrogManTropicalModel::createBodyLayer);
+            event.registerLayerDefinition(FrogManZombieModel.LAYER_LOCATION, FrogManZombieModel::createBodyLayer);
+            event.registerLayerDefinition(FrogManBeastModel.LAYER_LOCATION, FrogManBeastModel::createBodyLayer);
+
         }
 
         @SubscribeEvent
@@ -114,9 +117,9 @@ public class TalesOfAduranton
             event.registerEntityRenderer(InicializarEntidades.FROGMAN_SKELETON_ENTITY.get(), FrogManSkeletonRender::new);
             event.registerEntityRenderer(InicializarEntidades.FROGMAN_SHAMAN_ENTITY.get(), FrogManShamanRender::new);
             event.registerEntityRenderer(InicializarEntidades.FROGMAN_TRADER_ENTITY.get(), FrogManTraderRender::new);
-            event.registerEntityRenderer(InicializarEntidades.FROGMAN_GOLLIAT.get(), FrogManGolliatRender::new);
-
-
+            event.registerEntityRenderer(InicializarEntidades.FROGMAN_TROPICAL.get(), FrogManTropicalRender::new);
+            event.registerEntityRenderer(InicializarEntidades.FROGMAN_ZOMBIE.get(), FrogManZombieRender::new);
+            event.registerEntityRenderer(InicializarEntidades.FROGMAN_BEAST.get(), FrogManBeastRender::new);
 
         }
 
