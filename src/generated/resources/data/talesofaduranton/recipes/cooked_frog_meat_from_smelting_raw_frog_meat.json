@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "cookingtime": 200,
+  "experience": 0.25,
+  "group": "frog_meat",
+  "ingredient": {
+    "item": "talesofaduranton:raw_frog_meat"
+  },
+  "result": "talesofaduranton:cooked_frog_meat"
+}

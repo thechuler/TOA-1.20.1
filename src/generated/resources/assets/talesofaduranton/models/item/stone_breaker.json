@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "talesofaduranton:item/stone_breaker"
+  }
+}
