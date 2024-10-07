@@ -1,18 +1,22 @@
 package net.rbkstudios.talesofaduranton.Eventos;
 
+import net.minecraft.client.model.PlayerModel;
 import net.minecraft.core.particles.DustParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.client.event.RenderLivingEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.rbkstudios.talesofaduranton.Efectos.InicializarEfectos;
+import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManDeepEntity;
 import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManSkeletonEntity;
 import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManZombieEntity;
 import net.rbkstudios.talesofaduranton.Entidades.InicializarEntidades;
@@ -30,6 +34,9 @@ public class EventosCustom {
             event.setCanceled(true);
         }
     }
+
+
+
 
 
     @SubscribeEvent

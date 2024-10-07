@@ -13,6 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.rbkstudios.talesofaduranton.Efectos.InicializarEfectos;
 import net.rbkstudios.talesofaduranton.Entidades.InicializarEntidades;
 import net.rbkstudios.talesofaduranton.Items.Custom.Breaker;
+import net.rbkstudios.talesofaduranton.Items.Custom.Crusher;
 import net.rbkstudios.talesofaduranton.Items.Custom.FrogManStaff;
 
 import net.rbkstudios.talesofaduranton.Items.Custom.geodaItem;
@@ -41,6 +42,17 @@ public class InicializarItems {
 
     public static final RegistryObject<Item> FROG_MAN_BEAST_SPAWN_EGG = ITEMS.register("frogman_spawn_beast_egg",
             () -> new ForgeSpawnEggItem(InicializarEntidades.FROGMAN_BEAST, 0x5c3f2a, 0x232c35, new Item.Properties()));
+
+    public static final RegistryObject<Item> FROG_MAN_CRAWLER_SPAWN_EGG = ITEMS.register("frogman_spawn_crawler_egg",
+            () -> new ForgeSpawnEggItem(InicializarEntidades.FROGMAN_CRAWLER, 0xb7b7b7, 0x0e0d0d, new Item.Properties()));
+
+    public static final RegistryObject<Item> FROG_MAN_DEEP_SPAWN_EGG = ITEMS.register("frogman_spawn_deep_egg",
+            () -> new ForgeSpawnEggItem(InicializarEntidades.FROGMAN_DEEP, 0x1b3a57, 0xfdfc4d, new Item.Properties()));
+
+    public static final RegistryObject<Item> FROG_MAN_GHOST_SPAWN_EGG = ITEMS.register("frogman_spawn_ghost_egg",
+            () -> new ForgeSpawnEggItem(InicializarEntidades.FROGMAN_GHOST, 0x8befa9, 0x4ce659, new Item.Properties()));
+
+
 
 
 
@@ -78,6 +90,12 @@ public class InicializarItems {
 
     public static final RegistryObject<Item> COIN = ITEMS.register("coin",
             () -> new Item(new Item.Properties().stacksTo(64)));
+
+
+    public static final RegistryObject<Item> RUSTIC_CRUSHER = ITEMS.register("rustic_crusher",
+            () -> new Crusher(Tiers.STONE,1,-3.0f,new Item.Properties()));
+
+
 
 
 

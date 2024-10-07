@@ -25,11 +25,18 @@ public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> AGREGAR_PIEDRA_CARGADA = registerKey("agregar_piedra_cargada");
     public static final ResourceKey<BiomeModifier> SPAWNEAR_FROGMAN = registerKey("spawn_frogman");
     public static final ResourceKey<BiomeModifier> SPAWNEAR_TRADERFROGMAN = registerKey("spawn_frogmantrader");
+    public static final ResourceKey<BiomeModifier> SPAWNEAR_FROGMAN_CRAWLER = registerKey("spawn_frogman_crawler");
 
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
+
+        HolderSet<Biome> TODOS_LOS_BIOMAS = biomes.getOrThrow(BiomeTags.IS_OVERWORLD);
+        HolderSet<Biome> BIOMASFROGMAN = HolderSet.direct(biomes.getOrThrow(Biomes.SWAMP), biomes.getOrThrow(Biomes.MANGROVE_SWAMP));
+        HolderSet<Biome> BIOMASFROGMANTRADER = HolderSet.direct(biomes.getOrThrow(Biomes.SWAMP), biomes.getOrThrow(Biomes.MANGROVE_SWAMP));
+
+
 
         context.register(AGREGAR_PIEDRA_CARGADA, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
@@ -37,53 +44,28 @@ public class ModBiomeModifiers {
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
 
-        HolderSet<Biome> BIOMASFROGMANTRADER = HolderSet.direct(
-                biomes.getOrThrow(Biomes.SWAMP),
-                biomes.getOrThrow(Biomes.MANGROVE_SWAMP)  // Agrega otro bioma, por ejemplo, el bioma FOREST
-        );
+
+        context.register(SPAWNEAR_TRADERFROGMAN, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(BIOMASFROGMANTRADER,
+                Collections.singletonList(new MobSpawnSettings.SpawnerData(InicializarEntidades.FROGMAN_TRADER_ENTITY.get(),
+                        10, 1, 1
+                ))));
 
 
-        context.register(SPAWNEAR_TRADERFROGMAN, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
-                BIOMASFROGMANTRADER,
-
-                Collections.singletonList(new MobSpawnSettings.SpawnerData(
-                        InicializarEntidades.FROGMAN_TRADER_ENTITY.get(),
-                        01,  // Peso de generación
-                        1,
-                        1
-                ))
-        ));
+        context.register(SPAWNEAR_FROGMAN_CRAWLER, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(TODOS_LOS_BIOMAS,
+                Collections.singletonList(new MobSpawnSettings.SpawnerData(InicializarEntidades.FROGMAN_CRAWLER.get(),
+                        40, 1, 1
+                ))));
 
 
 
-
-
-
-
-        HolderSet<Biome> BIOMASFROGMAN = HolderSet.direct(
-                biomes.getOrThrow(Biomes.SWAMP),
-                biomes.getOrThrow(Biomes.MANGROVE_SWAMP)
-        );
-
-
-        context.register(SPAWNEAR_FROGMAN, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(
-                BIOMASFROGMAN,
-
+        context.register(SPAWNEAR_FROGMAN, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(BIOMASFROGMAN,
                 Arrays.asList(
-                        new MobSpawnSettings.SpawnerData(
-                                InicializarEntidades.FROGMAN_ENTITY.get(),
-                                100,
-                                4,
-                                6
+                        new MobSpawnSettings.SpawnerData(InicializarEntidades.FROGMAN_ENTITY.get(),
+                                100, 4, 6
                         ),
-                        new MobSpawnSettings.SpawnerData(
-                                InicializarEntidades.FROGMAN_SHAMAN_ENTITY.get(),
-                                30,
-                                1,
-                                1
-                        )
-                )
-        ));
+                        new MobSpawnSettings.SpawnerData(InicializarEntidades.FROGMAN_SHAMAN_ENTITY.get(),
+                                30, 1, 1
+                        ))));
 
 
 

@@ -32,8 +32,9 @@ public class EntityLootTables extends EntityLootSubProvider {
 
         add(InicializarEntidades.FROGMAN_TRADER_ENTITY.get(), LootTable.lootTable());
         add(InicializarEntidades.FROGMAN_BEAST.get(), LootTable.lootTable());
-
-
+        add(InicializarEntidades.FROGMAN_CRAWLER.get(), LootTable.lootTable());
+        add(InicializarEntidades.FROGMAN_DEEP.get(), LootTable.lootTable());
+        add(InicializarEntidades.FROGMAN_GHOST.get(), LootTable.lootTable());
 
 
 

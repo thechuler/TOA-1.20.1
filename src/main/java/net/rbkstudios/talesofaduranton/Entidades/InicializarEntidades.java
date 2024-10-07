@@ -48,7 +48,7 @@ public class InicializarEntidades {
 
 
     public static final RegistryObject<EntityType<FrogManZombieEntity>> FROGMAN_ZOMBIE = ENTIDADES.register("frogman_zombie",
-            () -> EntityType.Builder.of(FrogManZombieEntity::new, MobCategory.CREATURE).sized(1f,1.3f)
+            () -> EntityType.Builder.of(FrogManZombieEntity::new, MobCategory.MONSTER).sized(1f,1.3f)
                     .build(new ResourceLocation(TalesOfAduranton.MODID,"frogman_zombie").toString()));
 
 
@@ -57,7 +57,19 @@ public class InicializarEntidades {
                     .build(new ResourceLocation(TalesOfAduranton.MODID,"frogman_beast").toString()));
 
 
+    public static final RegistryObject<EntityType<FrogManCrawlerEntity>> FROGMAN_CRAWLER = ENTIDADES.register("frogman_crawler",
+            () -> EntityType.Builder.of(FrogManCrawlerEntity::new, MobCategory.MONSTER).sized(1.5f,2f)
+                    .build(new ResourceLocation(TalesOfAduranton.MODID,"frogman_crawler").toString()));
 
+
+
+    public static final RegistryObject<EntityType<FrogManDeepEntity>> FROGMAN_DEEP = ENTIDADES.register("frogman_deep",
+            () -> EntityType.Builder.of(FrogManDeepEntity::new, MobCategory.CREATURE).sized(1f,1.3f)
+                    .build(new ResourceLocation(TalesOfAduranton.MODID,"frogman_deep").toString()));
+
+    public static final RegistryObject<EntityType<FrogManGhostEntity>> FROGMAN_GHOST = ENTIDADES.register("frogman_ghost",
+            () -> EntityType.Builder.of(FrogManGhostEntity::new, MobCategory.CREATURE).sized(1f,1.3f)
+                    .build(new ResourceLocation(TalesOfAduranton.MODID,"frogman_ghost").toString()));
 
 
 
@@ -77,8 +89,9 @@ public class InicializarEntidades {
         event.put(FROGMAN_TROPICAL.get(), FrogManTropicalEntity.createAttributes().build());
         event.put(FROGMAN_ZOMBIE.get(), FrogManZombieEntity.createAttributes().build());
         event.put(FROGMAN_BEAST.get(), FrogManBeastEntity.createAttributes().build());
-
-
+        event.put(FROGMAN_CRAWLER.get(), FrogManCrawlerEntity.createAttributes().build());
+        event.put(FROGMAN_DEEP.get(), FrogManDeepEntity.createAttributes().build());
+        event.put(FROGMAN_GHOST.get(), FrogManGhostEntity.createAttributes().build());
     }
 
     @SubscribeEvent
@@ -86,6 +99,7 @@ public class InicializarEntidades {
         event.register(InicializarEntidades.FROGMAN_ENTITY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE,FrogManEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.OR);
         event.register(InicializarEntidades.FROGMAN_SHAMAN_ENTITY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE,FrogManShamanEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.OR);
         event.register(InicializarEntidades.FROGMAN_TRADER_ENTITY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE,FrogManTraderEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.OR);
+        event.register(InicializarEntidades.FROGMAN_CRAWLER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,FrogManCrawlerEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.OR);
 
     }
 

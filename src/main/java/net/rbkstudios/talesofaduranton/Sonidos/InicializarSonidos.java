@@ -67,6 +67,12 @@ public class InicializarSonidos {
 
 
 
+    public static final RegistryObject<SoundEvent>  FROGMANCRAWLERATTACK=
+            SONIDOS.register("frogmancrawlerattack", ()-> SoundEvent.createVariableRangeEvent(new ResourceLocation
+                    (TalesOfAduranton.MODID,"frogmancrawlerattack")));
+
+
+
 
 
     public static void register(IEventBus eventBus) {

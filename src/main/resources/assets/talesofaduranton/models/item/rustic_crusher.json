@@ -1,0 +1,20 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "forge:separate_transforms",
+  "base": {
+    "parent": "talesofaduranton:item/rustic_crusher3d"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "talesofaduranton:item/rustic_crusher2d"
+    },
+    "ground": {
+      "parent": "talesofaduranton:item/rustic_crusher2d"
+
+    },
+    "fixed": {
+      "parent": "talesofaduranton:item/staff_3d"
+
+    }
+  }
+}

@@ -90,5 +90,15 @@
       "talesofaduranton:frogmanbeast_hurt1"
 
     ]
+  },
+
+
+
+  "frogmancrawlerattack": {
+    "subtitles": "sounds.talesofaduranton.frogmancrawlerattack",
+    "sounds":[
+      "talesofaduranton:frogmancrawlerattack"
+
+    ]
   }
 }

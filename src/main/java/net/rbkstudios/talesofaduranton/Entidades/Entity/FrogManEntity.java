@@ -205,9 +205,14 @@ public static AttributeSupplier.Builder createAttributes() {
     }
 
 
+    @Override
+    public boolean canCollideWith(Entity pEntity) {
+        return false;
+    }
 
     @Override
     protected void registerGoals() {
+
         this.goalSelector.addGoal(1,new FloatGoal(this));
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, new Class[0])).setAlertOthers(new Class[0]));
         this.goalSelector.addGoal(2,new MeleeAttackGoal(this,1,true));

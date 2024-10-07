@@ -8,6 +8,6 @@
     "type": "talesofaduranton:frogman_trader_entity",
     "maxCount": 1,
     "minCount": 1,
-    "weight": 1
+    "weight": 10
   }
 }
