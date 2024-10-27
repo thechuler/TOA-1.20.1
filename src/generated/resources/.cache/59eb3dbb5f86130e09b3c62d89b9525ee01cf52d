@@ -1,10 +1,10 @@
-// 1.20.1	2024-10-06T20:30:24.109312	Loot Tables
+// 1.20.1	2024-10-19T12:33:30.4801081	Loot Tables
 7dee95b396a400304cedc0c6ce984c7049d0b742 data/talesofaduranton/loot_tables/blocks/geode_block.json
 4952e030de579dd407ed8f1c9df7bde5e6697833 data/talesofaduranton/loot_tables/entities/frogman_beast.json
 6c5acbc9316d6a3914d3ef6c848456bc1bb70dcd data/talesofaduranton/loot_tables/entities/frogman_crawler.json
 8e7d9bef7d59bf8e6dad707b68ebf687aef6ac89 data/talesofaduranton/loot_tables/entities/frogman_deep.json
 532266a01b0ff4804d1413cf407c3dba1ff308a3 data/talesofaduranton/loot_tables/entities/frogman_entity.json
-7ed8afd12aba5d8fb355df552e64d4869843fc7f data/talesofaduranton/loot_tables/entities/frogman_ghost.json
+dded8f803cf340f5b5ae95480390318e09943718 data/talesofaduranton/loot_tables/entities/frogman_ghost.json
 20bfd258bfd4be7d295d0a8ddd08ce057fc8b228 data/talesofaduranton/loot_tables/entities/frogman_shaman_entity.json
 627b3034b1a43ed0bc27ebbac18a2cef7b8342b0 data/talesofaduranton/loot_tables/entities/frogman_skeleton_entity.json
 f29373096bd153c9906edd17a1b007fb362fed6a data/talesofaduranton/loot_tables/entities/frogman_trader_entity.json

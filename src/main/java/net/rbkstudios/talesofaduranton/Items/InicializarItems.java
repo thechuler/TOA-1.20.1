@@ -22,6 +22,9 @@ import net.rbkstudios.talesofaduranton.TalesOfAduranton;
 public class InicializarItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TalesOfAduranton.MODID);
 
+
+
+
     public static final RegistryObject<Item> FROG_MAN_SPAWN_EGG = ITEMS.register("frogman_spawn_egg",
             () -> new ForgeSpawnEggItem(InicializarEntidades.FROGMAN_ENTITY, 0x428430, 0xa8a84e, new Item.Properties()));
 
@@ -94,6 +97,14 @@ public class InicializarItems {
 
     public static final RegistryObject<Item> RUSTIC_CRUSHER = ITEMS.register("rustic_crusher",
             () -> new Crusher(Tiers.STONE,1,-3.0f,new Item.Properties()));
+
+
+
+    public static final RegistryObject<Item> ECTOPLASM = ITEMS.register("ectoplasm",
+            () -> new Item(new Item.Properties().stacksTo(64)));
+
+
+
 
 
 

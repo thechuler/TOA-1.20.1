@@ -68,7 +68,7 @@ public class InicializarEntidades {
                     .build(new ResourceLocation(TalesOfAduranton.MODID,"frogman_deep").toString()));
 
     public static final RegistryObject<EntityType<FrogManGhostEntity>> FROGMAN_GHOST = ENTIDADES.register("frogman_ghost",
-            () -> EntityType.Builder.of(FrogManGhostEntity::new, MobCategory.CREATURE).sized(1f,1.3f)
+            () -> EntityType.Builder.of(FrogManGhostEntity::new, MobCategory.MONSTER).sized(1f,1.3f)
                     .build(new ResourceLocation(TalesOfAduranton.MODID,"frogman_ghost").toString()));
 
 
@@ -96,10 +96,12 @@ public class InicializarEntidades {
 
     @SubscribeEvent
     public  static void  RegistrarLugardeSpawn(SpawnPlacementRegisterEvent event){
-        event.register(InicializarEntidades.FROGMAN_ENTITY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE,FrogManEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.OR);
-        event.register(InicializarEntidades.FROGMAN_SHAMAN_ENTITY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE,FrogManShamanEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.OR);
-        event.register(InicializarEntidades.FROGMAN_TRADER_ENTITY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE,FrogManTraderEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.OR);
-        event.register(InicializarEntidades.FROGMAN_CRAWLER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,FrogManCrawlerEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.OR);
+        event.register(InicializarEntidades.FROGMAN_ENTITY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE,FrogManEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(InicializarEntidades.FROGMAN_SHAMAN_ENTITY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE,FrogManShamanEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(InicializarEntidades.FROGMAN_TRADER_ENTITY.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE,FrogManTraderEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(InicializarEntidades.FROGMAN_CRAWLER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,FrogManCrawlerEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(InicializarEntidades.FROGMAN_GHOST.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,FrogManGhostEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(InicializarEntidades.FROGMAN_TROPICAL.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING,FrogManTropicalEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.REPLACE);
 
     }
 

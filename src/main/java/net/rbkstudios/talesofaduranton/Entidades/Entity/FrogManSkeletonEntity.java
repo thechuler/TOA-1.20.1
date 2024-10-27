@@ -23,20 +23,24 @@ import org.jetbrains.annotations.Nullable;
 public class FrogManSkeletonEntity extends FrogManEntity {
 
 
-    public FrogManSkeletonEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel);
-    }
+
 
     public static EntityDataAccessor<Boolean> RUGIR = SynchedEntityData.defineId(FrogManEntity.class, EntityDataSerializers.BOOLEAN);
     public static EntityDataAccessor<Boolean> ATACAR = SynchedEntityData.defineId(FrogManEntity.class, EntityDataSerializers.BOOLEAN);
+    public static EntityDataAccessor<Boolean> SPAWN = SynchedEntityData.defineId(FrogManEntity.class, EntityDataSerializers.BOOLEAN);
+
 
     public final AnimationState idleAnimationState = new AnimationState();
     public final AnimationState gruñirAnimationState = new AnimationState();
-    public final AnimationState atacarAnimationState = new AnimationState();
+    public final AnimationState spawnAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
     private int  rugidoAnimationTimeout = 0;
-    private int  atacarAnimationTimeOut = 0;
+    private int  spawnAnimationTimeOut = 60;
 
+    public FrogManSkeletonEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
+        super(pEntityType, pLevel);
+        spawnAnimationState.start(this.tickCount);
+    }
 
     @Nullable
     @Override
@@ -49,6 +53,7 @@ public class FrogManSkeletonEntity extends FrogManEntity {
         super.defineSynchedData();
         this.entityData.define(RUGIR,false);
         this.entityData.define(ATACAR,false);
+        this.entityData.define(SPAWN,true);
     }
 
 
@@ -91,16 +96,24 @@ public class FrogManSkeletonEntity extends FrogManEntity {
     @Override
     public void tick() {
 
+        if(!getData(SPAWN)) {
 
-        if(this.level().isClientSide()){
-            setUpAnimationStates();
-            ManageRugido();
+            if (this.level().isClientSide()) {
+                setUpAnimationStates();
+                ManageRugido();
+            }
+            if (!this.level().isClientSide()) {
+                ManageOwnDead();
+            }
+        }else{
+           if(spawnAnimationTimeOut <= 0){
+               spawnAnimationState.stop();
+           }else{
+               spawnAnimationTimeOut--;
+           }
+
+
         }
-
-        if(!this.level().isClientSide()){
-           ManageOwnDead();
-        }
-
         super.tick();
     }
 

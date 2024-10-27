@@ -34,7 +34,18 @@ public class EntityLootTables extends EntityLootSubProvider {
         add(InicializarEntidades.FROGMAN_BEAST.get(), LootTable.lootTable());
         add(InicializarEntidades.FROGMAN_CRAWLER.get(), LootTable.lootTable());
         add(InicializarEntidades.FROGMAN_DEEP.get(), LootTable.lootTable());
-        add(InicializarEntidades.FROGMAN_GHOST.get(), LootTable.lootTable());
+
+
+
+
+
+
+        add(InicializarEntidades.FROGMAN_GHOST.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(InicializarItems.ECTOPLASM.get()))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1,2)))
+                        .when(LootItemRandomChanceCondition.randomChance(0.7f)))
+        );
 
 
 
@@ -52,8 +63,6 @@ public class EntityLootTables extends EntityLootSubProvider {
                         .when(LootItemRandomChanceCondition.randomChance(0.7f)) // Probabilidad de 50%
 
                 )
-
-
         );
 
 

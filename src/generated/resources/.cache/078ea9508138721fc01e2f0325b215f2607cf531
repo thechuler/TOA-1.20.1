@@ -1,7 +1,8 @@
-// 1.20.1	2024-10-06T20:30:24.1083147	Item Models: talesofaduranton
+// 1.20.1	2024-10-19T12:33:30.4781425	Item Models: talesofaduranton
 f2e78c5787c831dfab1b68ae5ba8fb79dc1e152c assets/talesofaduranton/models/item/coin.json
 de386c74957d56bcede7fe68b58393e7dd9d2504 assets/talesofaduranton/models/item/cooked_frog_meat.json
 43c6881a237cc726a5ed42f39e5e164f5e10505d assets/talesofaduranton/models/item/diamond_breaker.json
+58a122ba5a004d64e73d7a2efeac18ff846392f4 assets/talesofaduranton/models/item/ectoplasm.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/talesofaduranton/models/item/frogman_spawn_beast_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/talesofaduranton/models/item/frogman_spawn_crawler_egg.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/talesofaduranton/models/item/frogman_spawn_deep_egg.json

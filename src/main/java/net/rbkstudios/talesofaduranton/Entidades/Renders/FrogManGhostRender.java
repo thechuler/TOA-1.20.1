@@ -14,6 +14,8 @@ import net.rbkstudios.talesofaduranton.Entidades.Modelos.FrogManGhostModel;
 import net.rbkstudios.talesofaduranton.TalesOfAduranton;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.text.html.parser.Entity;
+
 
 public class FrogManGhostRender<type extends FrogManGhostEntity> extends MobRenderer<type, FrogManGhostModel<type>> {
 
@@ -37,7 +39,15 @@ public class FrogManGhostRender<type extends FrogManGhostEntity> extends MobRend
     }
 
 
+    @Override
+    protected int getBlockLightLevel(type pEntity, BlockPos pPos) {
+        return 15;
+    }
 
+    @Override
+    protected int getSkyLightLevel(type pEntity, BlockPos pPos) {
+        return 15;
+    }
 
     @Override
     public void render(FrogManGhostEntity pEntity, float pEntityYaw, float pPartialTicks, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight) {

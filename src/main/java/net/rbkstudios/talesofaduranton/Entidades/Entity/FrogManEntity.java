@@ -28,6 +28,7 @@ import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.rbkstudios.talesofaduranton.Sonidos.InicializarSonidos;
@@ -45,8 +46,9 @@ public class FrogManEntity extends Animal implements Enemy {
 
 
     public FrogManEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
-        super(pEntityType, pLevel);
 
+        super(pEntityType, pLevel);
+        this.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.DIAMOND_AXE));
     }
 
 
@@ -113,6 +115,7 @@ public class FrogManEntity extends Animal implements Enemy {
     protected SoundEvent getDeathSound() {
         return InicializarSonidos.FROGMANDEATH.get();
     }
+
 
 
 

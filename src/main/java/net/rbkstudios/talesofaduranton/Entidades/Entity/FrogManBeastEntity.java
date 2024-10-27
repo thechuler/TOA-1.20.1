@@ -132,16 +132,13 @@ public class FrogManBeastEntity extends Animal implements Enemy {
                 performRaycast();
                 lookAtTarget(getTarget());
                 if(!getData(ATACAR) && !getData(CARGAR)) {
-                    if(tiempoCarga <= 0){
+
                         setData(CARGAR, true);
-                        tiempoCarga = 30;
-                    }else{
-                        tiempoCarga--;
-                    }
+
 
                 }
 
-            Cargar();
+                Cargar();
                 Atacar();
             }
 
@@ -158,21 +155,21 @@ public class FrogManBeastEntity extends Animal implements Enemy {
 
 
     public void Cargar(){
- if(getData(CARGAR)){
-     if(tiempoCarga >= 50){
-     setData(CARGAR,false);
+        if(getData(CARGAR)){
+            if(tiempoCarga >= 50){
+                setData(CARGAR,false);
 
-     if(this.getTarget() !=null && this.getTarget().isAlive()){
+                if(this.getTarget() !=null && this.getTarget().isAlive()){
 
-         setData(ATACAR,true);
-         tiempoAtascado = 200;
-         posicion = this.getTarget().getOnPos();
-     }
+                    setData(ATACAR,true);
+                    tiempoAtascado = 200;
+                    posicion = this.getTarget().getOnPos();
+                }
 
- }else{
-         tiempoCarga++;
-     }
-    }}
+            }else{
+                tiempoCarga++;
+            }
+        }}
 
 
 
@@ -285,7 +282,7 @@ public class FrogManBeastEntity extends Animal implements Enemy {
         } else {
             if(tiempoAtascado>=0) {
                 this.setDeltaMovement(direction.scale(speed)); // Mueve la entidad en la dirección del objetivo
-               tiempoAtascado--;
+                tiempoAtascado--;
             }else {
                 this.setDeltaMovement(Vec3.ZERO);
                 setData(ATACAR,false);
@@ -321,7 +318,7 @@ public class FrogManBeastEntity extends Animal implements Enemy {
             }
         } else {
             if (attackAnimationStarted) {
-                this.atacarAnimationState.stop();
+               this.atacarAnimationState.stop();
                 attackAnimationStarted = false;
             }
         }
@@ -336,7 +333,7 @@ public class FrogManBeastEntity extends Animal implements Enemy {
                 setData(RUGIR,false);
                 this.rugidoAnimationTimeout = 60;
                 this.gruñirAnimationState.start(this.tickCount);
-                    this.level().playLocalSound(this.blockPosition(),InicializarSonidos.FROGMANBEASTHURT.get(), SoundSource.NEUTRAL,this.getSoundVolume(),this.getVoicePitch(),false);
+                this.level().playLocalSound(this.blockPosition(),InicializarSonidos.FROGMANBEASTHURT.get(), SoundSource.NEUTRAL,this.getSoundVolume(),this.getVoicePitch(),false);
 
 
             }
@@ -355,7 +352,7 @@ public class FrogManBeastEntity extends Animal implements Enemy {
     protected void registerGoals() {
         this.goalSelector.addGoal(1,new FloatGoal(this));
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, new Class[0])).setAlertOthers(new Class[0]));
-       this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Player.class, true));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Player.class, true));
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, AbstractVillager.class, false));
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, AbstractGolem.class, false));
         this.goalSelector.addGoal(8, new RandomStrollGoal(this, 0.6));

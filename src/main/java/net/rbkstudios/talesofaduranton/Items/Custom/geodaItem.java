@@ -20,9 +20,6 @@ public class geodaItem extends Item {
     }
 
 
-
-
-
     @Override
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
 

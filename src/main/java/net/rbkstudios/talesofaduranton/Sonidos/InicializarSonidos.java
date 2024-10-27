@@ -15,6 +15,20 @@ public class InicializarSonidos {
     public static final DeferredRegister<SoundEvent> SONIDOS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, TalesOfAduranton.MODID);
 
 
+    public static final RegistryObject<SoundEvent> FROGMANGHOSTAMBIENT =
+            SONIDOS.register("frogmanghostambient", ()-> SoundEvent.createVariableRangeEvent(new ResourceLocation
+                    (TalesOfAduranton.MODID,"frogmanghostambient")));
+
+
+    public static final RegistryObject<SoundEvent>  FROGMANGHOSTDEATH =
+            SONIDOS.register("frogmanghostdeath", ()-> SoundEvent.createVariableRangeEvent(new ResourceLocation
+                    (TalesOfAduranton.MODID,"frogmanghostdeath")));
+
+
+    public static final RegistryObject<SoundEvent>  FROGMANGHOSTHURT=
+            SONIDOS.register("frogmanghosthurt", ()-> SoundEvent.createVariableRangeEvent(new ResourceLocation
+                    (TalesOfAduranton.MODID,"frogmanghosthurt")));
+
 
 
     public static final RegistryObject<SoundEvent> FROGMANAMBIENT =
@@ -70,6 +84,13 @@ public class InicializarSonidos {
     public static final RegistryObject<SoundEvent>  FROGMANCRAWLERATTACK=
             SONIDOS.register("frogmancrawlerattack", ()-> SoundEvent.createVariableRangeEvent(new ResourceLocation
                     (TalesOfAduranton.MODID,"frogmancrawlerattack")));
+
+
+
+    public static final RegistryObject<SoundEvent>  SPLASH=
+            SONIDOS.register("splash", ()-> SoundEvent.createVariableRangeEvent(new ResourceLocation
+                    (TalesOfAduranton.MODID,"splash")));
+
 
 
 

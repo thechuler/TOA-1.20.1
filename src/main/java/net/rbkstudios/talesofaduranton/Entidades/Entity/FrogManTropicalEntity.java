@@ -7,6 +7,7 @@ import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
@@ -27,8 +28,12 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.Tags;
 import net.rbkstudios.talesofaduranton.Sonidos.InicializarSonidos;
 import org.jetbrains.annotations.Nullable;
 
@@ -251,7 +256,14 @@ public class FrogManTropicalEntity extends Animal implements Enemy {
     }
 
 
-    public static boolean PuedeSpawnear(EntityType<FrogManEntity> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos position, RandomSource random) {
-        return true ;
+    public static boolean PuedeSpawnear(EntityType<FrogManTropicalEntity> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos position, RandomSource random) {
+        BlockState blockState = level.getBlockState(position.below());
+
+        if (blockState.is(BlockTags.LEAVES)) {
+            BlockState blockAbove = level.getBlockState(position);
+            return blockAbove.isAir();
+        }
+
+        return false;
     }
 }

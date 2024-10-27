@@ -35,6 +35,7 @@ public class ProveedorItemModel extends ItemModelProvider {
 
 
         simpleItem(InicializarItems.POISON_BALL);
+        simpleItem(InicializarItems.ECTOPLASM);
         handheldItem(InicializarItems.STONE_BREAKER);
         handheldItem(InicializarItems.IRON_BREAKER);
         handheldItem(InicializarItems.GOLD_BREAKER);

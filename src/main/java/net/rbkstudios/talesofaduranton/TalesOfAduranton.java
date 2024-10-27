@@ -2,8 +2,10 @@ package net.rbkstudios.talesofaduranton;
 
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -16,13 +18,13 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.rbkstudios.talesofaduranton.Bloques.InicializarBloques;
 import net.rbkstudios.talesofaduranton.Efectos.InicializarEfectos;
 import net.rbkstudios.talesofaduranton.Encantamientos.InicializarEncantamientos;
-import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManTropicalEntity;
-import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManZombieEntity;
 import net.rbkstudios.talesofaduranton.Entidades.InicializarEntidades;
 import net.rbkstudios.talesofaduranton.Entidades.Modelos.*;
 import net.rbkstudios.talesofaduranton.Entidades.Renders.*;
 import net.rbkstudios.talesofaduranton.Items.InicializarCreativeTab;
 import net.rbkstudios.talesofaduranton.Items.InicializarItems;
+import net.rbkstudios.talesofaduranton.Particulas.Custom.BloodParticle;
+import net.rbkstudios.talesofaduranton.Particulas.InicializarParticulas;
 import net.rbkstudios.talesofaduranton.Sonidos.InicializarSonidos;
 import org.slf4j.Logger;
 
@@ -46,14 +48,8 @@ public class TalesOfAduranton
         InicializarBloques.registrar(modEventBus);
         InicializarEncantamientos.registrar(modEventBus);
         InicializarEfectos.registrar(modEventBus);
-
-
-
-
-
-     /*
         InicializarParticulas.register(modEventBus);
-*/
+
 
         modEventBus.addListener(this::commonSetup);
 
@@ -98,6 +94,10 @@ public class TalesOfAduranton
     @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
     {
+        @SubscribeEvent
+        public static void registerParticleFactories(final RegisterParticleProvidersEvent event) {
+            Minecraft.getInstance().particleEngine.register(InicializarParticulas.BLOOD_PARTICLE.get(), BloodParticle.Provider::new);
+        }
 
 
         @SubscribeEvent

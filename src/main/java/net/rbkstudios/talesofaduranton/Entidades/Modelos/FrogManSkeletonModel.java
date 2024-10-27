@@ -13,6 +13,7 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.rbkstudios.talesofaduranton.Entidades.Animaciones.FrogManAnimaciones;
 import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManEntity;
+import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManSkeletonEntity;
 import net.rbkstudios.talesofaduranton.TalesOfAduranton;
 
 
@@ -69,7 +70,8 @@ public class FrogManSkeletonModel<T extends FrogManEntity> extends HierarchicalM
 		this.animateWalk(FrogManAnimaciones.CAMINAR, v, v1, 4f, 2.5f);
 		this.animate(((FrogManEntity) t).idleAnimationState, FrogManAnimaciones.IDLE, v2, 1f);
 		this.animate(((FrogManEntity) t).gruñirAnimationState, FrogManAnimaciones.GRUÑIDO, v2, 1f);
-		this.animate(((FrogManEntity) t).atacarAnimationState, FrogManAnimaciones.ATACAR, v2, 1f);
+		this.animate(((FrogManSkeletonEntity) t).spawnAnimationState, FrogManAnimaciones.SPAWN, v2, 1f);
+
 	}
 
 

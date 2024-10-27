@@ -2,8 +2,10 @@
 
 
 
-  "entity.talesofaduranton.frogman_trader_entity": "FrogMan Trader"
-
+  "entity.talesofaduranton.frogman_trader_entity": "Frogling Trader",
+  "entity.talesofaduranton.frogman_crawler": "Frogling Crawler",
+  "entity.talesofaduranton.frogman_tropical_entity": "Tropical Frogling",
+  "entity.talesofaduranton.frogman_skeleton_entity": "Skeleton Frogling"
 
 
 
