@@ -1,0 +1,52 @@
+{
+
+
+  "item.talesofaduranton.geode":"Geoda",
+
+
+  "item.talesofaduranton.raw_frog_meat": "Carne de rana cruda",
+  "item.talesofaduranton.cooked_frog_meat": "Carne de rana cocinada",
+  "sounds.talesofaduranton.frogmanambient": "Croar de ranas",
+  "sounds.talesofaduranton.frogmaneasteregg": "Tambores",
+
+
+
+
+
+  "creativetab.main_tab": "Froglings",
+
+
+
+  "effect.talesofaduranton.poisonous": "Ponzoñoso",
+  "block.talesofaduranton.geode_block": "Bloque de Geoda",
+
+
+
+  "item.talesofaduranton.staff": "Baculo de Frogling",
+  "item.talesofaduranton.rustic_crusher": "Moledor",
+  "item.talesofaduranton.poison_ball": "Bola venenosa",
+  "item.talesofaduranton.coin": "Moneda",
+
+
+  "item.talesofaduranton.frogman_spawn_egg": "Huevo de Frogling",
+  "item.talesofaduranton.frogman_spawn_skeleton_egg": "Huevo de Frogling Esqueleto",
+  "item.talesofaduranton.frogman_spawn_trader_egg": "Huevo de Frogling Mercader",
+  "item.talesofaduranton.frogman_spawn_tropical_egg": "Huevo de Frogling tropical",
+  "item.talesofaduranton.frogman_spawn_zombie_egg": "Huevo de Frogling zombie",
+  "item.talesofaduranton.frogman_spawn_beast_egg": "Huevo de Frogling bestia",
+  "item.talesofaduranton.frogman_spawn_crawler_egg": "Huevo de Frogling Crawler",
+  "item.talesofaduranton.frogman_spawn_ghost_egg": "Huevo de Frogling fantasma",
+  "item.talesofaduranton.frogman_spawn_shaman_egg": "Huevo de Frogling Chamán",
+
+  "entity.talesofaduranton.frogman_trader_entity": "Frogling Mercader",
+  "entity.talesofaduranton.frogman_crawler": "Frogling Crawler",
+  "entity.talesofaduranton.frogman_tropical_entity": "Frogling Tropical",
+  "entity.talesofaduranton.frogman_skeleton_entity": "Frogling Esqueleto",
+  "entity.talesofaduranton.frogman_zombie": "Frogling Zombie",
+  "entity.talesofaduranton.frogman_shaman_entity": "Frogling Chamán",
+  "entity.talesofaduranton.frogman_ghost": "Frogling Fantasma",
+  "entity.talesofaduranton.frogman_beast": "Frogling Bestia",
+  "entity.talesofaduranton.frogman_entity": "Frogling"
+
+
+}

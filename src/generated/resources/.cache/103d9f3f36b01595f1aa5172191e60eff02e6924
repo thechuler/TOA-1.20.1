@@ -1,8 +1,9 @@
-// 1.20.1	2024-10-27T10:42:52.4558239	Registries
+// 1.20.1	2024-11-27T12:15:22.7477581	Registries
 9508358ee40d093ee32646abb89e7f604de2c813 data/talesofaduranton/forge/biome_modifier/agregar_piedra_cargada.json
 ccd08330a0942bd8ccdd963076a321374f9f2139 data/talesofaduranton/forge/biome_modifier/spawn_frogman.json
-e0eb99afa6aedee86c0e24feb57803aa195da4cb data/talesofaduranton/forge/biome_modifier/spawn_frogmanghost.json
+dd4b722b16fa10fe2c974d729b10c320305826b1 data/talesofaduranton/forge/biome_modifier/spawn_frogmanghost.json
 cc3b09d88d7fcbb5bc4881f8b2414f7fb282db08 data/talesofaduranton/forge/biome_modifier/spawn_frogmantrader.json
+9725f6f0b2d142db728d32ea8534890f619e3c22 data/talesofaduranton/forge/biome_modifier/spawn_frogman_bestia.json
 5e0b393088d40e6b8189c05f28a4ee777980fe6b data/talesofaduranton/forge/biome_modifier/spawn_frogman_crawler.json
 04699f6850039230b5bb7c85ad3a04498c220f2f data/talesofaduranton/forge/biome_modifier/spawn_frogman_tropical.json
 5d68793a66d70810e462ca9eadd518b695ca238f data/talesofaduranton/worldgen/configured_feature/piedra_cargada.json

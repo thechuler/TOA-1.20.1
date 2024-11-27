@@ -4,6 +4,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -18,9 +20,12 @@ import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.navigation.PathNavigation;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.WaterAnimal;
 import net.minecraft.world.entity.monster.Enemy;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.pathfinder.Path;
 import net.minecraft.world.phys.BlockHitResult;
@@ -31,6 +36,8 @@ import net.rbkstudios.talesofaduranton.Utilidades;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+
+import static net.minecraft.world.entity.monster.Monster.checkAnyLightMonsterSpawnRules;
 
 public class FrogManZombieEntity extends Animal implements Enemy {
 
@@ -71,7 +78,9 @@ public class FrogManZombieEntity extends Animal implements Enemy {
         this.goalSelector.addGoal(1,new FloatGoal(this));
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, new Class[0])).setAlertOthers(new Class[0]));
         this.goalSelector.addGoal(2,new MeleeAttackGoal(this,1,true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, (entity) -> {return !(entity instanceof FrogManZombieEntity);}));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, LivingEntity.class, false, (entity) -> {
+            return !(entity instanceof FrogManZombieEntity) && !(entity instanceof WaterAnimal);
+        }));
         this.goalSelector.addGoal(8, new RandomStrollGoal(this, 0.6));
     }
 
@@ -80,21 +89,6 @@ public class FrogManZombieEntity extends Animal implements Enemy {
 
 
 
-    @Override
-    public void addAdditionalSaveData(CompoundTag compound) {
-        super.addAdditionalSaveData(compound);
-        System.out.println(this.textureVariant + "GUARDADO");
-        compound.putInt("TextureVariant", this.textureVariant);
-    }
-
-    @Override
-    public void readAdditionalSaveData(CompoundTag compound) {
-        super.readAdditionalSaveData(compound);
-        if (compound.contains("TextureVariant")) {
-            this.textureVariant = compound.getInt("TextureVariant");
-            System.out.println(this.textureVariant + "CARGADO");
-        }
-    }
 
 
     @Override
@@ -183,6 +177,15 @@ public class FrogManZombieEntity extends Animal implements Enemy {
 
 
 
+    public static boolean PuedeSpawnear(EntityType<FrogManZombieEntity> entityType, LevelAccessor level, MobSpawnType spawnType, BlockPos position, RandomSource random) {
 
+
+        return  checkAnyLightMonsterSpawnRules(entityType,level,spawnType,position,random) && !level.getServer().overworld().isDay();
+    }
+
+
+    public static boolean checkAnyLightMonsterSpawnRules(EntityType<? extends FrogManZombieEntity> pType, LevelAccessor pLevel, MobSpawnType pSpawnType, BlockPos pPos, RandomSource pRandom) {
+        return pLevel.getDifficulty() != Difficulty.PEACEFUL && checkMobSpawnRules(pType, pLevel, pSpawnType, pPos, pRandom);
+    }
 
 }

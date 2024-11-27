@@ -110,7 +110,7 @@ public class TalesOfAduranton
             event.registerLayerDefinition(FrogManZombieModel.LAYER_LOCATION, FrogManZombieModel::createBodyLayer);
             event.registerLayerDefinition(FrogManBeastModel.LAYER_LOCATION, FrogManBeastModel::createBodyLayer);
             event.registerLayerDefinition(FrogManCrawlerModel.LAYER_LOCATION, FrogManCrawlerModel::createBodyLayer);
-            event.registerLayerDefinition(FrogManDeepModel.LAYER_LOCATION, FrogManDeepModel::createBodyLayer);
+
             event.registerLayerDefinition(FrogManGhostModel.LAYER_LOCATION, FrogManGhostModel::createBodyLayer);
         }
 
@@ -124,7 +124,7 @@ public class TalesOfAduranton
             event.registerEntityRenderer(InicializarEntidades.FROGMAN_ZOMBIE.get(), FrogManZombieRender::new);
             event.registerEntityRenderer(InicializarEntidades.FROGMAN_BEAST.get(), FrogManBeastRender::new);
             event.registerEntityRenderer(InicializarEntidades.FROGMAN_CRAWLER.get(), FrogManCrawlerRender::new);
-            event.registerEntityRenderer(InicializarEntidades.FROGMAN_DEEP.get(), FrogManDeepRender::new);
+
             event.registerEntityRenderer(InicializarEntidades.FROGMAN_GHOST.get(), FrogManGhostRender::new);
         }
 

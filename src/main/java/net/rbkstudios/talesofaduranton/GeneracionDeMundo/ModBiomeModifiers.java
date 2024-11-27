@@ -28,6 +28,7 @@ public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> SPAWNEAR_TRADERFROGMAN = registerKey("spawn_frogmantrader");
     public static final ResourceKey<BiomeModifier> SPAWNEAR_FROGMAN_CRAWLER = registerKey("spawn_frogman_crawler");
     public static final ResourceKey<BiomeModifier> SPAWNEAR_FROGMAN_TROPICAL = registerKey("spawn_frogman_tropical");
+    public static final ResourceKey<BiomeModifier> SPAWNEAR_FROGMAN_BESTIA = registerKey("spawn_frogman_bestia");
 
 
 
@@ -40,6 +41,8 @@ public class ModBiomeModifiers {
         HolderSet<Biome> BIOMASFROGMAN = HolderSet.direct(biomes.getOrThrow(Biomes.SWAMP), biomes.getOrThrow(Biomes.MANGROVE_SWAMP));
         HolderSet<Biome> BIOMASFROGMANTRADER = HolderSet.direct(biomes.getOrThrow(Biomes.SWAMP), biomes.getOrThrow(Biomes.MANGROVE_SWAMP));
         HolderSet<Biome> BIOMASFROGMANTROPICAL = HolderSet.direct(biomes.getOrThrow(Biomes.JUNGLE), biomes.getOrThrow(Biomes.SPARSE_JUNGLE));
+        HolderSet<Biome> BIOMASFROGMANBESTIA = HolderSet.direct(biomes.getOrThrow(Biomes.TAIGA), biomes.getOrThrow(Biomes.SNOWY_TAIGA),biomes.getOrThrow(Biomes.OLD_GROWTH_SPRUCE_TAIGA),biomes.getOrThrow(Biomes.OLD_GROWTH_PINE_TAIGA));
+
 
 
         context.register(AGREGAR_PIEDRA_CARGADA, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
@@ -49,19 +52,31 @@ public class ModBiomeModifiers {
 
 
         context.register(SPAWNEAR_GHOSTFROGMAN, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(TODOS_LOS_BIOMAS,
-                Collections.singletonList(new MobSpawnSettings.SpawnerData(InicializarEntidades.FROGMAN_GHOST.get(),
-                        100, 1, 2
-                ))));
+                Arrays.asList(
+                        new MobSpawnSettings.SpawnerData(InicializarEntidades.FROGMAN_GHOST.get(),
+                                70, 1, 1
+                        ),
+                        new MobSpawnSettings.SpawnerData(InicializarEntidades.FROGMAN_ZOMBIE.get(),
+                                30, 2, 2
+                        ))));
+
+
+
 
         context.register(SPAWNEAR_FROGMAN_TROPICAL, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(BIOMASFROGMANTROPICAL,
                 Collections.singletonList(new MobSpawnSettings.SpawnerData(InicializarEntidades.FROGMAN_TROPICAL.get(),
                         100, 2, 4
                 ))));
 
+        context.register(SPAWNEAR_FROGMAN_BESTIA, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(BIOMASFROGMANBESTIA,
+                Collections.singletonList(new MobSpawnSettings.SpawnerData(InicializarEntidades.FROGMAN_BEAST.get(),
+                        100, 2, 4
+                ))));
 
 
 
-        context.register(SPAWNEAR_TRADERFROGMAN, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(BIOMASFROGMANTRADER,
+
+        context.register(SPAWNEAR_TRADERFROGMAN, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(TODOS_LOS_BIOMAS,
                 Collections.singletonList(new MobSpawnSettings.SpawnerData(InicializarEntidades.FROGMAN_TRADER_ENTITY.get(),
                         10, 1, 1
                 ))));

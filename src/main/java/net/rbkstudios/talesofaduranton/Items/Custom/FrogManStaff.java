@@ -68,7 +68,7 @@ public class FrogManStaff extends Item {
     private void SpawnSkeletons(Player player , LivingEntity Target, ItemStack item){
         Enchantment enchantment = InicializarEncantamientos.MULTISOUL.get();
         int level = EnchantmentHelper.getEnchantments(item).getOrDefault(enchantment, 0);
-        for (int i = 0; i < Utilidades.GenerarNumeroAleatorio(1,1 + level); i++) {
+        for (int i = 0; i < Utilidades.GenerarNumeroAleatorio(1,3 + level); i++) {
             BlockPos spawnPos = Utilidades.GenerarPosicionAleatoriaEnArea(player.getOnPos(),3);
 
             FrogManSkeletonEntity newEntity = InicializarEntidades.FROGMAN_SKELETON_ENTITY.get().create(player.level());

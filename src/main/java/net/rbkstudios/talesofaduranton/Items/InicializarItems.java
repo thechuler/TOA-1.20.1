@@ -12,7 +12,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.rbkstudios.talesofaduranton.Efectos.InicializarEfectos;
 import net.rbkstudios.talesofaduranton.Entidades.InicializarEntidades;
-import net.rbkstudios.talesofaduranton.Items.Custom.Breaker;
+
 import net.rbkstudios.talesofaduranton.Items.Custom.Crusher;
 import net.rbkstudios.talesofaduranton.Items.Custom.FrogManStaff;
 
@@ -20,6 +20,7 @@ import net.rbkstudios.talesofaduranton.Items.Custom.geodaItem;
 import net.rbkstudios.talesofaduranton.TalesOfAduranton;
 
 public class InicializarItems {
+
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TalesOfAduranton.MODID);
 
 
@@ -49,8 +50,6 @@ public class InicializarItems {
     public static final RegistryObject<Item> FROG_MAN_CRAWLER_SPAWN_EGG = ITEMS.register("frogman_spawn_crawler_egg",
             () -> new ForgeSpawnEggItem(InicializarEntidades.FROGMAN_CRAWLER, 0xb7b7b7, 0x0e0d0d, new Item.Properties()));
 
-    public static final RegistryObject<Item> FROG_MAN_DEEP_SPAWN_EGG = ITEMS.register("frogman_spawn_deep_egg",
-            () -> new ForgeSpawnEggItem(InicializarEntidades.FROGMAN_DEEP, 0x1b3a57, 0xfdfc4d, new Item.Properties()));
 
     public static final RegistryObject<Item> FROG_MAN_GHOST_SPAWN_EGG = ITEMS.register("frogman_spawn_ghost_egg",
             () -> new ForgeSpawnEggItem(InicializarEntidades.FROGMAN_GHOST, 0x8befa9, 0x4ce659, new Item.Properties()));
@@ -75,23 +74,7 @@ public class InicializarItems {
     public static final RegistryObject<Item> POISON_BALL = ITEMS.register("poison_ball",
             () -> new Item(new Item.Properties().stacksTo(64).food(new FoodProperties.Builder().saturationMod(0).fast().alwaysEat().nutrition(0).effect(new MobEffectInstance(InicializarEfectos.POISONOUS_EFFECT.get(),100),1).build())));
 
-    public static final RegistryObject<Item> STONE_BREAKER = ITEMS.register("stone_breaker",
-            () -> new Breaker(Tiers.STONE,6,-3.0f,new Item.Properties()));
-
-    public static final RegistryObject<Item> IRON_BREAKER = ITEMS.register("iron_breaker",
-            () -> new Breaker(Tiers.STONE,7,-3.0f,new Item.Properties()));
-
-    public static final RegistryObject<Item> GOLD_BREAKER = ITEMS.register("gold_breaker",
-            () -> new Breaker(Tiers.STONE,6,-3.0f,new Item.Properties()));
-
-    public static final RegistryObject<Item> DIAMOND_BREAKER = ITEMS.register("diamond_breaker",
-            () -> new Breaker(Tiers.STONE,8,-3.0f,new Item.Properties()));
-
-    public static final RegistryObject<Item> NETHERITE_BREAKER = ITEMS.register("netherite_breaker",
-            () -> new Breaker(Tiers.STONE,10,-3.0f,new Item.Properties()));
-
-
-    public static final RegistryObject<Item> COIN = ITEMS.register("coin",
+     public static    final RegistryObject<Item> COIN = ITEMS.register("coin",
             () -> new Item(new Item.Properties().stacksTo(64)));
 
 

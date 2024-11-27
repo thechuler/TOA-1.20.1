@@ -12,12 +12,13 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.rbkstudios.talesofaduranton.Entidades.Animaciones.FrogManAnimaciones;
+import net.rbkstudios.talesofaduranton.Entidades.Animaciones.FrogManSkeletonAnimaciones;
 import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManEntity;
 import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManSkeletonEntity;
 import net.rbkstudios.talesofaduranton.TalesOfAduranton;
 
 
-public class FrogManSkeletonModel<T extends FrogManEntity> extends HierarchicalModel<T> {
+public class FrogManSkeletonModel<T extends FrogManSkeletonEntity> extends HierarchicalModel<T> {
 	// This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
 	public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(TalesOfAduranton.MODID, "frogmanmodel"), "main");
 	private final ModelPart root;
@@ -67,10 +68,10 @@ public class FrogManSkeletonModel<T extends FrogManEntity> extends HierarchicalM
 	@Override
 	public void setupAnim(T t, float v, float v1, float v2, float v3, float v4) {
 		this.root().getAllParts().forEach(ModelPart::resetPose);
-		this.animateWalk(FrogManAnimaciones.CAMINAR, v, v1, 4f, 2.5f);
-		this.animate(((FrogManEntity) t).idleAnimationState, FrogManAnimaciones.IDLE, v2, 1f);
-		this.animate(((FrogManEntity) t).gruñirAnimationState, FrogManAnimaciones.GRUÑIDO, v2, 1f);
-		this.animate(((FrogManSkeletonEntity) t).spawnAnimationState, FrogManAnimaciones.SPAWN, v2, 1f);
+		this.animateWalk(FrogManSkeletonAnimaciones.CAMINAR, v, v1, 4f, 2.5f);
+		this.animate(((FrogManSkeletonEntity) t).idleAnimationState, FrogManSkeletonAnimaciones.IDLE, v2, 1f);
+		this.animate(((FrogManSkeletonEntity) t).gruñirAnimationState, FrogManSkeletonAnimaciones.GRUÑIDO, v2, 1f);
+		this.animate(((FrogManSkeletonEntity) t).spawnAnimationState, FrogManSkeletonAnimaciones.SPAWN, v2, 1f);
 
 	}
 

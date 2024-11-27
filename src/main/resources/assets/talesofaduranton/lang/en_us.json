@@ -1,12 +1,52 @@
 {
 
 
+  "item.talesofaduranton.geode":"Geode",
 
-  "entity.talesofaduranton.frogman_trader_entity": "Frogling Trader",
-  "entity.talesofaduranton.frogman_crawler": "Frogling Crawler",
+
+  "item.talesofaduranton.raw_frog_meat": "Raw Frog Meat",
+  "item.talesofaduranton.cooked_frog_meat": "Cooked Frog Meat",
+  "sounds.talesofaduranton.frogmanambient": "Frog Croak",
+  "sounds.talesofaduranton.frogmaneasteregg": "Drums",
+
+
+
+
+
+  "creativetab.main_tab": "Froglings",
+
+
+
+  "effect.talesofaduranton.poisonous": "Poisonous",
+  "block.talesofaduranton.geode_block": "Geode Block",
+
+
+
+  "item.talesofaduranton.staff": "Frogling Staff",
+  "item.talesofaduranton.rustic_crusher": "Crusher",
+  "item.talesofaduranton.poison_ball": "Poison Ball",
+  "item.talesofaduranton.coin": "Coin",
+
+
+  "item.talesofaduranton.frogman_spawn_egg": "Frogling Spawn egg",
+  "item.talesofaduranton.frogman_spawn_skeleton_egg": "Skeleton Frogling Spawn egg",
+  "item.talesofaduranton.frogman_spawn_trader_egg": "Merchant Frogling Spawn egg",
+  "item.talesofaduranton.frogman_spawn_tropical_egg": "Tropical Frogling Spawn egg",
+  "item.talesofaduranton.frogman_spawn_zombie_egg": "Zombie Frogling Spawn egg",
+  "item.talesofaduranton.frogman_spawn_beast_egg": "Beast Frogling Spawn egg",
+  "item.talesofaduranton.frogman_spawn_crawler_egg": "Crawler Frogling Spawn egg",
+  "item.talesofaduranton.frogman_spawn_ghost_egg": "Phantom Frogling Spawn egg",
+  "item.talesofaduranton.frogman_spawn_shaman_egg": "Shaman Frogling Spawn egg",
+
+  "entity.talesofaduranton.frogman_trader_entity": "Merchant Frogling",
+  "entity.talesofaduranton.frogman_crawler": "Crawler Frogling",
   "entity.talesofaduranton.frogman_tropical_entity": "Tropical Frogling",
-  "entity.talesofaduranton.frogman_skeleton_entity": "Skeleton Frogling"
-
+  "entity.talesofaduranton.frogman_skeleton_entity": "Skeleton Frogling",
+  "entity.talesofaduranton.frogman_zombie": "Zombie Frogling",
+  "entity.talesofaduranton.frogman_shaman_entity": "Shaman Frogling",
+  "entity.talesofaduranton.frogman_ghost": "Phantom Frogling",
+  "entity.talesofaduranton.frogman_entity": "Frogling",
+  "entity.talesofaduranton.frogman_beast": "Beast Frogling"
 
 
 }

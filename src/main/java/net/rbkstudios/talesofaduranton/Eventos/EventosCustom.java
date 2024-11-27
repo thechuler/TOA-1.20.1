@@ -18,7 +18,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.rbkstudios.talesofaduranton.Efectos.InicializarEfectos;
-import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManDeepEntity;
+
 import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManSkeletonEntity;
 import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManZombieEntity;
 import net.rbkstudios.talesofaduranton.Entidades.InicializarEntidades;
