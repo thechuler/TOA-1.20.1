@@ -13,6 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.rbkstudios.talesofaduranton.Efectos.InicializarEfectos;
 import net.rbkstudios.talesofaduranton.Entidades.InicializarEntidades;
 
+import net.rbkstudios.talesofaduranton.Items.Custom.AncientGeode;
 import net.rbkstudios.talesofaduranton.Items.Custom.Crusher;
 import net.rbkstudios.talesofaduranton.Items.Custom.FrogManStaff;
 
@@ -54,6 +55,9 @@ public class InicializarItems {
     public static final RegistryObject<Item> FROG_MAN_GHOST_SPAWN_EGG = ITEMS.register("frogman_spawn_ghost_egg",
             () -> new ForgeSpawnEggItem(InicializarEntidades.FROGMAN_GHOST, 0x8befa9, 0x4ce659, new Item.Properties()));
 
+    public static final RegistryObject<Item> NITROFROGLIN_SPAWN_EGG = ITEMS.register("nitrofroglin_spawn_egg",
+            () -> new ForgeSpawnEggItem(InicializarEntidades.NITROFROGLIN, 0x450401, 0xffe000, new Item.Properties()));
+
 
 
 
@@ -63,6 +67,9 @@ public class InicializarItems {
 
     public static final RegistryObject<Item> GEODE = ITEMS.register("geode",
             () -> new geodaItem(new Item.Properties().stacksTo(64)));
+
+
+
 
     public static final RegistryObject<Item> RAW_FROG_MEAT = ITEMS.register("raw_frog_meat",
             () -> new Item(new Item.Properties().stacksTo(64).food(new FoodProperties.Builder().nutrition(5).saturationMod(3).effect(new MobEffectInstance(MobEffects.POISON,100),1).build())));
@@ -81,6 +88,11 @@ public class InicializarItems {
     public static final RegistryObject<Item> RUSTIC_CRUSHER = ITEMS.register("rustic_crusher",
             () -> new Crusher(Tiers.STONE,1,-3.0f,new Item.Properties()));
 
+
+
+
+    public static final RegistryObject<Item> ANCIENT_GEODE = ITEMS.register("ancient_geode",
+            () -> new AncientGeode(new Item.Properties().stacksTo(64)));
 
 
     public static final RegistryObject<Item> ECTOPLASM = ITEMS.register("ectoplasm",

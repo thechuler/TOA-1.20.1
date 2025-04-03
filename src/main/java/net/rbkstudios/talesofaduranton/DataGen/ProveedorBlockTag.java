@@ -23,6 +23,8 @@ public class ProveedorBlockTag extends BlockTagsProvider {
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(InicializarBloques.GEODE_BLOCK.get());
         this.tag(BlockTags.NEEDS_IRON_TOOL).add(InicializarBloques.GEODE_BLOCK.get());
+        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(InicializarBloques.ANCIENT_GEODE_BLOCK.get());
+        this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(InicializarBloques.ANCIENT_GEODE_BLOCK.get());
 
 
     }

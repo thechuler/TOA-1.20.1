@@ -9,6 +9,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManBeastEntity;
 import net.rbkstudios.talesofaduranton.Entidades.Entity.FrogManGhostEntity;
+import net.rbkstudios.talesofaduranton.Entidades.Entity.NitroFroglinEntity;
 import net.rbkstudios.talesofaduranton.Entidades.Modelos.FrogManBeastModel;
 import net.rbkstudios.talesofaduranton.Entidades.Modelos.FrogManGhostModel;
 import net.rbkstudios.talesofaduranton.TalesOfAduranton;
@@ -53,7 +54,6 @@ public class FrogManGhostRender<type extends FrogManGhostEntity> extends MobRend
     public void render(FrogManGhostEntity pEntity, float pEntityYaw, float pPartialTicks, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight) {
 
         super.render((type) pEntity, pEntityYaw, pPartialTicks, pPoseStack, pBuffer, pPackedLight);
-
     }
 
 

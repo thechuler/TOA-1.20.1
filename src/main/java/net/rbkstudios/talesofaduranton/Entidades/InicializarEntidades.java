@@ -69,6 +69,12 @@ public class InicializarEntidades {
 
 
 
+    public static final RegistryObject<EntityType<NitroFroglinEntity>> NITROFROGLIN = ENTIDADES.register("nitrofroglin",
+            () -> EntityType.Builder.of(NitroFroglinEntity::new, MobCategory.MONSTER).sized(1f,1.3f)
+                    .build(new ResourceLocation(TalesOfAduranton.MODID,"nitrofroglin").toString()));
+
+
+
 
 
     public static void registrar(IEventBus eventBus) {
@@ -87,6 +93,7 @@ public class InicializarEntidades {
         event.put(FROGMAN_BEAST.get(), FrogManBeastEntity.createAttributes().build());
         event.put(FROGMAN_CRAWLER.get(), FrogManCrawlerEntity.createAttributes().build());
         event.put(FROGMAN_GHOST.get(), FrogManGhostEntity.createAttributes().build());
+        event.put(NITROFROGLIN.get(), NitroFroglinEntity.createAttributes().build());
     }
 
     @SubscribeEvent
@@ -97,9 +104,9 @@ public class InicializarEntidades {
         event.register(InicializarEntidades.FROGMAN_CRAWLER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,FrogManCrawlerEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.REPLACE);
         event.register(InicializarEntidades.FROGMAN_GHOST.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,FrogManGhostEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.REPLACE);
         event.register(InicializarEntidades.FROGMAN_TROPICAL.get(), SpawnPlacements.Type.NO_RESTRICTIONS, Heightmap.Types.MOTION_BLOCKING,FrogManTropicalEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.REPLACE);
-
         event.register(InicializarEntidades.FROGMAN_BEAST.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE,FrogManBeastEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.REPLACE);
         event.register(InicializarEntidades.FROGMAN_ZOMBIE.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE,FrogManZombieEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.REPLACE);
+        event.register(InicializarEntidades.NITROFROGLIN.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE,NitroFroglinEntity::PuedeSpawnear,SpawnPlacementRegisterEvent.Operation.REPLACE);
 
     }
 

@@ -46,9 +46,8 @@ public class FrogManEntity extends Animal implements Enemy {
 
 
     public FrogManEntity(EntityType<? extends Animal> pEntityType, Level pLevel) {
-
         super(pEntityType, pLevel);
-        this.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.DIAMOND_AXE));
+
     }
 
 
@@ -220,6 +219,7 @@ public static AttributeSupplier.Builder createAttributes() {
         this.targetSelector.addGoal(1, (new HurtByTargetGoal(this, new Class[0])).setAlertOthers(new Class[0]));
         this.goalSelector.addGoal(2,new MeleeAttackGoal(this,1,true));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Player.class, true));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, NitroFroglinEntity.class, true));
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, AbstractVillager.class, false));
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, AbstractGolem.class, false));
         this.goalSelector.addGoal(8, new RandomStrollGoal(this, 0.6));

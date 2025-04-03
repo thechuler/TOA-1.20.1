@@ -20,6 +20,7 @@ public class ProveedorBlockStateData extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         blockWithItem(InicializarBloques.GEODE_BLOCK);
+        blockWithItem(InicializarBloques.ANCIENT_GEODE_BLOCK);
 
 
     }

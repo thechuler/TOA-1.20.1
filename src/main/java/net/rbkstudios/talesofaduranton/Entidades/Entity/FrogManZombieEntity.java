@@ -124,9 +124,19 @@ public class FrogManZombieEntity extends Animal implements Enemy {
 
     @Override
     public void tick() {
+
+
         if(this.level().isClientSide()){
             setUpAnimationStates();
         }else{
+
+            if(this.isAlive()){
+                boolean flag = this.isSunBurnTick();
+                if (flag) {
+                    this.setSecondsOnFire(8);
+                }
+            }
+
 
 
         }
@@ -149,6 +159,7 @@ public class FrogManZombieEntity extends Animal implements Enemy {
         }
         return super.hurt(source, amount);
     }
+
     @Override
     protected void updateWalkAnimation(float pPartialTick) {
         float f;

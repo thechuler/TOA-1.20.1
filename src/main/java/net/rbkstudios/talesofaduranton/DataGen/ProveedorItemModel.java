@@ -30,16 +30,16 @@ public class ProveedorItemModel extends ItemModelProvider {
         withExistingParent(InicializarItems.FROG_MAN_TROPICAL_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
         withExistingParent(InicializarItems.FROG_MAN_BEAST_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
         withExistingParent(InicializarItems.FROG_MAN_CRAWLER_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
-       
+
+        withExistingParent(InicializarItems.NITROFROGLIN_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
         withExistingParent(InicializarItems.FROG_MAN_GHOST_SPAWN_EGG.getId().getPath(),mcLoc("item/template_spawn_egg"));
 
 
         simpleItem(InicializarItems.POISON_BALL);
         simpleItem(InicializarItems.ECTOPLASM);
-
+        simpleItem(InicializarItems.ANCIENT_GEODE);
         simpleItem(InicializarItems.COIN);
         simpleItem(InicializarItems.COOKED_FROG_MEAT);
-
         simpleItem(InicializarItems.RAW_FROG_MEAT);
     }
 

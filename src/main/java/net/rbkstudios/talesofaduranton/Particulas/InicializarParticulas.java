@@ -16,6 +16,10 @@ public class InicializarParticulas {
     public static final RegistryObject<SimpleParticleType> BLOOD_PARTICLE =
             PARTICLE_TYPES.register("blood_particle", () -> new SimpleParticleType(true));
 
+
+    public static final RegistryObject<SimpleParticleType> PHANTOM_PARTICLE =
+            PARTICLE_TYPES.register("phantom_particle", () -> new SimpleParticleType(true));
+
     public static void register(IEventBus eventBus) {
         PARTICLE_TYPES.register(eventBus);
     }

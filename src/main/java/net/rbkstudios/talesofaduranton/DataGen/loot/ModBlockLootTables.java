@@ -25,6 +25,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(InicializarBloques.GEODE_BLOCK.get(),
                block -> createOreDrop(InicializarBloques.GEODE_BLOCK.get(), InicializarItems.GEODE.get())
                 );
+
+
+        this.add(InicializarBloques.ANCIENT_GEODE_BLOCK.get(),
+                block -> createOreDrop(InicializarBloques.ANCIENT_GEODE_BLOCK.get(), InicializarItems.ANCIENT_GEODE.get())
+        );
     }
 
 

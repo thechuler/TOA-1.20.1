@@ -5,14 +5,14 @@
       "bonus_rolls": 0.0,
       "conditions": [
         {
-          "chance": 0.2,
+          "chance": 1.0,
           "condition": "minecraft:random_chance"
         }
       ],
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "minecraft:brown_wool"
+          "name": "minecraft:coal"
         }
       ],
       "functions": [
@@ -20,8 +20,8 @@
           "add": false,
           "count": {
             "type": "minecraft:uniform",
-            "max": 1.0,
-            "min": 0.0
+            "max": 3.0,
+            "min": 1.0
           },
           "function": "minecraft:set_count"
         }
@@ -29,5 +29,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "talesofaduranton:entities/frogman_beast"
+  "random_sequence": "talesofaduranton:entities/nitrofroglin"
 }

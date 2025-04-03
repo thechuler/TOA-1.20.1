@@ -24,6 +24,7 @@ import net.rbkstudios.talesofaduranton.Entidades.Renders.*;
 import net.rbkstudios.talesofaduranton.Items.InicializarCreativeTab;
 import net.rbkstudios.talesofaduranton.Items.InicializarItems;
 import net.rbkstudios.talesofaduranton.Particulas.Custom.BloodParticle;
+import net.rbkstudios.talesofaduranton.Particulas.Custom.PhantomParticle;
 import net.rbkstudios.talesofaduranton.Particulas.InicializarParticulas;
 import net.rbkstudios.talesofaduranton.Sonidos.InicializarSonidos;
 import org.slf4j.Logger;
@@ -97,6 +98,7 @@ public class TalesOfAduranton
         @SubscribeEvent
         public static void registerParticleFactories(final RegisterParticleProvidersEvent event) {
             Minecraft.getInstance().particleEngine.register(InicializarParticulas.BLOOD_PARTICLE.get(), BloodParticle.Provider::new);
+            Minecraft.getInstance().particleEngine.register(InicializarParticulas.PHANTOM_PARTICLE.get(), PhantomParticle.Provider::new);
         }
 
 
@@ -110,8 +112,8 @@ public class TalesOfAduranton
             event.registerLayerDefinition(FrogManZombieModel.LAYER_LOCATION, FrogManZombieModel::createBodyLayer);
             event.registerLayerDefinition(FrogManBeastModel.LAYER_LOCATION, FrogManBeastModel::createBodyLayer);
             event.registerLayerDefinition(FrogManCrawlerModel.LAYER_LOCATION, FrogManCrawlerModel::createBodyLayer);
-
             event.registerLayerDefinition(FrogManGhostModel.LAYER_LOCATION, FrogManGhostModel::createBodyLayer);
+            event.registerLayerDefinition(NitroFroglinModel.LAYER_LOCATION, NitroFroglinModel::createBodyLayer);
         }
 
         @SubscribeEvent
@@ -126,6 +128,7 @@ public class TalesOfAduranton
             event.registerEntityRenderer(InicializarEntidades.FROGMAN_CRAWLER.get(), FrogManCrawlerRender::new);
 
             event.registerEntityRenderer(InicializarEntidades.FROGMAN_GHOST.get(), FrogManGhostRender::new);
+            event.registerEntityRenderer(InicializarEntidades.NITROFROGLIN.get(), NitroFroglinRender::new);
         }
 
 

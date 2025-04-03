@@ -50,6 +50,16 @@ public class EntityLootTables extends EntityLootSubProvider {
 
 
 
+        add(InicializarEntidades.NITROFROGLIN.get(), LootTable.lootTable()
+                .withPool(LootPool.lootPool().setRolls(ConstantValue.exactly(1))
+                        .add(LootItem.lootTableItem(Items.COAL))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1, 3)))
+                        .when(LootItemRandomChanceCondition.randomChance(1f))
+                )
+
+
+        );
+
 
 
         add(InicializarEntidades.FROGMAN_TROPICAL.get(), LootTable.lootTable()

@@ -12,6 +12,8 @@ import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -39,7 +41,10 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.phys.Vec3;
+import net.rbkstudios.talesofaduranton.Entidades.InicializarEntidades;
+import net.rbkstudios.talesofaduranton.Particulas.InicializarParticulas;
 import net.rbkstudios.talesofaduranton.Sonidos.InicializarSonidos;
+import net.rbkstudios.talesofaduranton.Utilidades;
 
 import javax.annotation.Nullable;
 import java.util.EnumSet;
@@ -88,6 +93,7 @@ public class FrogManGhostEntity extends Monster {
         this.goalSelector.addGoal(2,new MeleeAttackGoal(this,1,true));
 
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Player.class, true));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, FrogManZombieEntity.class, true));
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, AbstractVillager.class, false));
         this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, AbstractGolem.class, false));
         this.goalSelector.addGoal(7 ,new BeeWanderGoal());
@@ -116,10 +122,15 @@ public class FrogManGhostEntity extends Monster {
             return false;
         }
         if (pSource.getDirectEntity() instanceof Projectile) {
-            return false; // No recibir daño de proyectiles
+            this.level().playLocalSound(this.blockPosition(),InicializarSonidos.FROGMANGHOSTDEATH.get(), SoundSource.NEUTRAL,this.getSoundVolume(),this.getVoicePitch(),false);
+            Utilidades.spawnearParticulas(this,30, InicializarParticulas.BLOOD_PARTICLE.get());
+            this.discard();
         }
         return super.hurt(pSource, pAmount);
     }
+
+
+
 
     @Override
     public void tick() {
@@ -127,6 +138,14 @@ public class FrogManGhostEntity extends Monster {
         if (this.level().isClientSide) {
             setUpAnimationStates();
             ManageRugido();
+        }else{
+            if(this.isAlive()){
+                boolean flag = this.isSunBurnTick();
+                if (flag) {
+                    this.setSecondsOnFire(8);
+                }
+            }
+
         }
 
         // Permitir que el fantasma atraviese bloques siempre que esté buscando su objetivo
@@ -253,6 +272,41 @@ public class FrogManGhostEntity extends Monster {
 
 
     }
+
+
+
+
+
+    @Override
+    public boolean doHurtTarget(Entity pEntity) {
+        if(!this.level().isClientSide()&& pEntity instanceof Player){
+            ((Player) pEntity).addEffect(new MobEffectInstance(MobEffects.BLINDNESS,200));
+            this.level().playLocalSound(this.blockPosition(),InicializarSonidos.FROGMANGHOSTDEATH.get(), SoundSource.NEUTRAL,this.getSoundVolume(),this.getVoicePitch(),false);
+            Utilidades.spawnearParticulas(this,30, InicializarParticulas.BLOOD_PARTICLE.get());
+            this.discard();
+        }
+
+        if(!this.level().isClientSide()&& pEntity instanceof FrogManZombieEntity frogManZombie){
+            Vec3 posicion = frogManZombie.position();
+            frogManZombie.discard();
+            FrogManEntity frogling = new FrogManEntity(InicializarEntidades.FROGMAN_ENTITY.get(),this.level());
+            frogling.moveTo(posicion);
+            level().addFreshEntity(frogling);
+            this.level().playLocalSound(this.blockPosition(),InicializarSonidos.FROGMANGHOSTDEATH.get(), SoundSource.NEUTRAL,this.getSoundVolume(),this.getVoicePitch(),false);
+            Utilidades.spawnearParticulas(frogling,30, InicializarParticulas.PHANTOM_PARTICLE.get());
+            this.discard();
+        }
+        return super.doHurtTarget(pEntity);
+    }
+
+
+
+
+
+
+
+
+
 
 
 

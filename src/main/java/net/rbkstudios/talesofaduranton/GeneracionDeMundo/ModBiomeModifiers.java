@@ -24,12 +24,12 @@ public class ModBiomeModifiers {
 
     public static final ResourceKey<BiomeModifier> AGREGAR_PIEDRA_CARGADA = registerKey("agregar_piedra_cargada");
     public static final ResourceKey<BiomeModifier> SPAWNEAR_FROGMAN = registerKey("spawn_frogman");
-    public static final ResourceKey<BiomeModifier> SPAWNEAR_GHOSTFROGMAN = registerKey("spawn_frogmanghost");
+    public static final ResourceKey<BiomeModifier> SPAWNEAR_ZOMBIEFROGMAN = registerKey("spawn_frogmanzombie");
     public static final ResourceKey<BiomeModifier> SPAWNEAR_TRADERFROGMAN = registerKey("spawn_frogmantrader");
     public static final ResourceKey<BiomeModifier> SPAWNEAR_FROGMAN_CRAWLER = registerKey("spawn_frogman_crawler");
     public static final ResourceKey<BiomeModifier> SPAWNEAR_FROGMAN_TROPICAL = registerKey("spawn_frogman_tropical");
     public static final ResourceKey<BiomeModifier> SPAWNEAR_FROGMAN_BESTIA = registerKey("spawn_frogman_bestia");
-
+    public static final ResourceKey<BiomeModifier> SPAWNEAR_NITROFROGLIN = registerKey("spawn_nitrofroglin");
 
 
 
@@ -42,7 +42,7 @@ public class ModBiomeModifiers {
         HolderSet<Biome> BIOMASFROGMANTRADER = HolderSet.direct(biomes.getOrThrow(Biomes.SWAMP), biomes.getOrThrow(Biomes.MANGROVE_SWAMP));
         HolderSet<Biome> BIOMASFROGMANTROPICAL = HolderSet.direct(biomes.getOrThrow(Biomes.JUNGLE), biomes.getOrThrow(Biomes.SPARSE_JUNGLE));
         HolderSet<Biome> BIOMASFROGMANBESTIA = HolderSet.direct(biomes.getOrThrow(Biomes.TAIGA), biomes.getOrThrow(Biomes.SNOWY_TAIGA),biomes.getOrThrow(Biomes.OLD_GROWTH_SPRUCE_TAIGA),biomes.getOrThrow(Biomes.OLD_GROWTH_PINE_TAIGA));
-
+        HolderSet<Biome> TODOS_DEL_NETHER = biomes.getOrThrow(BiomeTags.IS_NETHER);
 
 
         context.register(AGREGAR_PIEDRA_CARGADA, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
@@ -51,14 +51,17 @@ public class ModBiomeModifiers {
                 GenerationStep.Decoration.UNDERGROUND_ORES));
 
 
-        context.register(SPAWNEAR_GHOSTFROGMAN, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(TODOS_LOS_BIOMAS,
-                Arrays.asList(
-                        new MobSpawnSettings.SpawnerData(InicializarEntidades.FROGMAN_GHOST.get(),
-                                70, 1, 1
-                        ),
-                        new MobSpawnSettings.SpawnerData(InicializarEntidades.FROGMAN_ZOMBIE.get(),
-                                30, 2, 2
-                        ))));
+
+        context.register(SPAWNEAR_ZOMBIEFROGMAN, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(TODOS_LOS_BIOMAS,
+                Collections.singletonList(new MobSpawnSettings.SpawnerData(InicializarEntidades.FROGMAN_ZOMBIE.get(),
+                        50, 1, 2
+                ))));
+
+        context.register(SPAWNEAR_NITROFROGLIN, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(TODOS_DEL_NETHER,
+                Collections.singletonList(new MobSpawnSettings.SpawnerData(InicializarEntidades.NITROFROGLIN.get(),
+                        50, 1, 3
+                ))));
+
 
 
 
@@ -68,10 +71,16 @@ public class ModBiomeModifiers {
                         100, 2, 4
                 ))));
 
+
         context.register(SPAWNEAR_FROGMAN_BESTIA, new ForgeBiomeModifiers.AddSpawnsBiomeModifier(BIOMASFROGMANBESTIA,
-                Collections.singletonList(new MobSpawnSettings.SpawnerData(InicializarEntidades.FROGMAN_BEAST.get(),
-                        100, 2, 4
-                ))));
+                Arrays.asList(
+                        new MobSpawnSettings.SpawnerData(InicializarEntidades.FROGMAN_GHOST.get(),
+                                10, 1, 1
+                        ),
+                        new MobSpawnSettings.SpawnerData(InicializarEntidades.FROGMAN_BEAST.get(),
+                                70, 1, 3
+                        ))));
+
 
 
 

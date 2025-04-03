@@ -34,7 +34,9 @@ public static final RegistryObject<Block> GEODE_BLOCK = registerBlock("geode_blo
 );
 
 
-
+    public static final RegistryObject<Block> ANCIENT_GEODE_BLOCK = registerBlock("ancient_geode_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.ANCIENT_DEBRIS))
+    );
 
 
 

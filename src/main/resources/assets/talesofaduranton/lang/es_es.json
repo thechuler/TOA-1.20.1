@@ -37,7 +37,10 @@
   "item.talesofaduranton.frogman_spawn_crawler_egg": "Huevo de Frogling Crawler",
   "item.talesofaduranton.frogman_spawn_ghost_egg": "Huevo de Frogling fantasma",
   "item.talesofaduranton.frogman_spawn_shaman_egg": "Huevo de Frogling Chamán",
+  "item.talesofaduranton.nitrofroglin_egg": "Huevo de Nitro-Frogling",
 
+
+  "entity.talesofaduranton.nitrofroglin": "Nitro-Frogling",
   "entity.talesofaduranton.frogman_trader_entity": "Frogling Mercader",
   "entity.talesofaduranton.frogman_crawler": "Frogling Crawler",
   "entity.talesofaduranton.frogman_tropical_entity": "Frogling Tropical",
@@ -47,6 +50,4 @@
   "entity.talesofaduranton.frogman_ghost": "Frogling Fantasma",
   "entity.talesofaduranton.frogman_beast": "Frogling Bestia",
   "entity.talesofaduranton.frogman_entity": "Frogling"
-
-
 }
